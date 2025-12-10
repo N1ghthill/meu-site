@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irving Ruas - Análise de Campanhas</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-chart-line"></i>
+                <h1>Irving Ruas</h1>
+            </div>
+            <div class="menu">
+                <a href="#home"><i class="fas fa-home"></i> Home</a>
+                <a href="#sobre"><i class="fas fa-user"></i> Sobre</a>
+                <a href="#projetos"><i class="fas fa-code"></i> Projetos</a>
+                <a href="#contato"><i class="fas fa-envelope"></i> Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>Olá, eu sou <span class="highlight">Irving Ruas</span></h2>
+                <h3>Desenvolvedor & Analista de Dados</h3>
+                <p>Especializado em análise de campanhas com Python e automação de processos.</p>
+                <div class="hero-buttons">
+                    <a href="#projetos" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> Ver Projetos
+                    </a>
+                    <a href="https://github.com/irvingruas" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-laptop-code"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="section">
+        <h2><i class="fas fa-user-circle"></i> Sobre Mim</h2>
+        <div class="about-content">
+            <div class="about-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Formação</h3>
+                <p>Estudante de Análise e Desenvolvimento de Sistemas</p>
+            </div>
+            <div class="about-card">
+                <i class="fas fa-code"></i>
+                <h3>Tecnologias</h3>
+                <p>Python, HTML/CSS, JavaScript, Git, Linux</p>
+            </div>
+            <div class="about-card">
+                <i class="fas fa-bullseye"></i>
+                <h3>Objetivo</h3>
+                <p>Desenvolver soluções inteligentes para análise de dados</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos" class="section dark">
+        <h2><i class="fas fa-project-diagram"></i> Meus Projetos</h2>
+        
+        <div class="project-card">
+            <div class="project-icon">
+                <i class="fas fa-chart-bar"></i>
+            </div>
+            <div class="project-content">
+                <h3>📊 Analisador de Campanhas</h3>
+                <p>Script Python para análise de campanhas de marketing com geração de relatórios automáticos.</p>
+                <div class="project-features">
+                    <span><i class="fas fa-check"></i> Análise estatística</span>
+                    <span><i class="fas fa-check"></i> Relatórios JSON</span>
+                    <span><i class="fas fa-check"></i> Interface CLI</span>
+                </div>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">JSON</span>
+                </div>
+                <button class="btn btn-code" onclick="executarScript()">
+                    <i class="fas fa-play"></i> Executar Script
+                </button>
+                <pre id="output"><code>Clique no botão para executar o script...</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section">
+        <h2><i class="fas fa-envelope"></i> Contato</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h3>Email</h3>
+                    <p>irving@ruas.dev.br</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <div>
+                    <h3>GitHub</h3>
+                    <p>github.com/irvingruas</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h3>Localização</h3>
+                    <p>Debian Linux</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 Irving Ruas. Todos os direitos reservados.</p>
+            <p class="tech-stack">
+                <i class="fab fa-html5"></i>
+                <i class="fab fa-css3-alt"></i>
+                <i class="fab fa-js"></i>
+                <i class="fab fa-python"></i>
+                <i class="fab fa-git-alt"></i>
+                <i class="fab fa-linux"></i>
+            </p>
+            <p class="footer-note">
+                Desenvolvido com <i class="fas fa-heart"></i> no terminal do Debian
+            </p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
