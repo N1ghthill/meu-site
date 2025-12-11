@@ -148,7 +148,7 @@ def main():
 
             elif opcao == '5':
                 print("\n👋 Obrigado por usar o Analisador de Campanhas!")
-                print("📧 Irving Ruas - seu-email-real@gmail.com")
+                print("📧 Irving Ruas - irving@ruas.dev.br")
                 break
 
             else:
