@@ -1,128 +1,268 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>N1ghthill - Análise de Campanhas</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Irving Ruas - Desenvolvedor & Analista de Dados</title>
+    <meta name="description" content="Portfólio profissional de Irving Ruas - Desenvolvedor Full Stack e Analista de Dados especializado em Python e automação">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
     <!-- Header -->
     <header>
-        <nav>
-            <div class="logo">
-                <i class="fas fa-chart-line"></i>
-                <h1>N1ghthill</h1>
-            </div>
-            <div class="menu">
-                <a href="#home"><i class="fas fa-home"></i> Home</a>
-                <a href="#sobre"><i class="fas fa-user"></i> Sobre</a>
-                <a href="#projetos"><i class="fas fa-code"></i> Projetos</a>
-                <a href="#contato"><i class="fas fa-envelope"></i> Contato</a>
-            </div>
-        </nav>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <div class="logo-icon">IR</div>
+                    <div class="logo-text">
+                        Irving <span>Ruas</span>
+                    </div>
+                </a>
+                
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+                
+                <button class="mobile-menu-btn" aria-label="Menu mobile">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h2>Olá, eu sou <span class="highlight">N1ghthill</span></h2>
-                <h3>Desenvolvedor & Analista de Dados</h3>
-                <p>Especializado em análise de campanhas com Python e automação de processos.</p>
-                <div class="hero-buttons">
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-code"></i>
+                    <span>Desenvolvedor Full Stack & Analista de Dados</span>
+                </div>
+                
+                <h1>Olá, eu sou <span class="highlight">Irving Ruas</span></h1>
+                <h2>Transformando dados em decisões inteligentes</h2>
+                <p>
+                    Especializado em análise de campanhas com Python, automação de processos 
+                    e desenvolvimento de soluções data-driven para otimizar resultados.
+                </p>
+                
+                <div class="btn-group">
                     <a href="#projetos" class="btn btn-primary">
                         <i class="fas fa-rocket"></i> Ver Projetos
                     </a>
-                    <a href="https://github.com/N1ghthill" target="_blank" class="btn btn-secondary">
-                        <i class="fab fa-github"></i> GitHub
+                    <a href="#contato" class="btn btn-secondary">
+                        <i class="fas fa-paper-plane"></i> Entre em Contato
                     </a>
                 </div>
             </div>
-            <div class="hero-image">
-                <i class="fas fa-laptop-code"></i>
-            </div>
         </div>
     </section>
 
-    <!-- Sobre -->
+    <!-- About Section -->
     <section id="sobre" class="section">
-        <h2><i class="fas fa-user-circle"></i> Sobre Mim</h2>
-        <div class="about-content">
-            <div class="about-card">
-                <i class="fas fa-graduation-cap"></i>
-                <h3>Formação</h3>
-                <p>Estudante de Análise e Desenvolvimento de Sistemas</p>
-            </div>
-            <div class="about-card">
-                <i class="fas fa-code"></i>
-                <h3>Tecnologias</h3>
-                <p>Python, HTML/CSS, JavaScript, Git, Linux</p>
-            </div>
-            <div class="about-card">
-                <i class="fas fa-bullseye"></i>
-                <h3>Objetivo</h3>
-                <p>Desenvolver soluções inteligentes para análise de dados</p>
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Formação Acadêmica</h3>
+                    </div>
+                    <p>
+                        Estudante de <strong>Análise e Desenvolvimento de Sistemas</strong> 
+                        com foco em Data Science, Machine Learning e Desenvolvimento Web.
+                    </p>
+                    <div class="highlight-info">
+                        <i class="fas fa-certificate"></i> Certificado em Python Avançado
+                    </div>
+                </div>
+                
+                <div class="about-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Tecnologias</h3>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">
+                            <i class="fab fa-python"></i> Python
+                        </span>
+                        <span class="tech-tag">
+                            <i class="fab fa-js"></i> JavaScript
+                        </span>
+                        <span class="tech-tag">
+                            <i class="fas fa-database"></i> SQL
+                        </span>
+                        <span class="tech-tag">
+                            <i class="fab fa-html5"></i> HTML/CSS
+                        </span>
+                        <span class="tech-tag">
+                            <i class="fab fa-git-alt"></i> Git
+                        </span>
+                        <span class="tech-tag">
+                            <i class="fab fa-linux"></i> Linux
+                        </span>
+                        <span class="tech-tag">
+                            <i class="fas fa-chart-line"></i> Pandas
+                        </span>
+                        <span class="tech-tag">
+                            <i class="fas fa-chart-bar"></i> NumPy
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="about-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Objetivo Profissional</h3>
+                    </div>
+                    <p>
+                        Desenvolver soluções inteligentes para análise de dados que transformem 
+                        informações complexas em insights acionáveis, otimizando processos e 
+                        impulsionando resultados empresariais.
+                    </p>
+                    <div class="highlight-info">
+                        <i class="fas fa-star"></i> Foco em automação e eficiência
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Projetos -->
-    <section id="projetos" class="section dark">
-        <h2><i class="fas fa-project-diagram"></i> Meus Projetos</h2>
-        
-        <div class="project-card">
-            <div class="project-icon">
-                <i class="fas fa-chart-bar"></i>
+    <!-- Projects Section -->
+    <section id="projetos" class="section projects">
+        <div class="container">
+            <h2 class="section-title">Meus Projetos</h2>
+            
+            <div class="project-terminal">
+                <div class="terminal-header">
+                    <div class="terminal-title">
+                        <i class="fas fa-terminal"></i>
+                        <span>analise_campanhas.py - Irving Ruas</span>
+                    </div>
+                    <div class="terminal-buttons">
+                        <div class="terminal-button close-btn"></div>
+                        <div class="terminal-button minimize-btn"></div>
+                        <div class="terminal-button maximize-btn"></div>
+                    </div>
+                </div>
+                
+                <div class="terminal-body">
+                    <div class="terminal-line">
+                        <span class="prompt">irving@analytics:~$</span> python3 analise_campanhas.py
+                    </div>
+                    <div class="terminal-line">===================================================</div>
+                    <div class="terminal-line">ANALISADOR DE CAMPANHAS v2.1 - IRVING RUAS</div>
+                    <div class="terminal-line">===================================================</div>
+                    <div class="terminal-line"><br></div>
+                    <div class="terminal-line">📊 <strong>MENU PRINCIPAL</strong></div>
+                    <div class="terminal-line">1. 💬 Criar dados de exemplo e analisar</div>
+                    <div class="terminal-line">2. 💬 Carregar dados de arquivo CSV</div>
+                    <div class="terminal-line">3. 💬 Gerar relatório JSON automático</div>
+                    <div class="terminal-line">4. 💬 Visualizar estatísticas completas</div>
+                    <div class="terminal-line">5. 💬 Exportar dashboard HTML</div>
+                    <div class="terminal-line">6. 💬 Sair do programa</div>
+                    <div class="terminal-line"><br></div>
+                    <div class="terminal-line">
+                        <span class="prompt">opção></span> <span class="cursor">█</span>
+                    </div>
+                </div>
             </div>
-            <div class="project-content">
-                <h3>📊 Analisador de Campanhas</h3>
-                <p>Script Python para análise de campanhas de marketing com geração de relatórios automáticos.</p>
-                <div class="project-features">
-                    <span><i class="fas fa-check"></i> Análise estatística</span>
-                    <span><i class="fas fa-check"></i> Relatórios JSON</span>
-                    <span><i class="fas fa-check"></i> Interface CLI</span>
+            
+            <div class="project-info">
+                <div class="project-header">
+                    <div class="project-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-title">
+                        <h3>Analisador de Campanhas</h3>
+                        <p class="project-subtitle">Irving Ruas</p>
+                    </div>
                 </div>
-                <div class="project-tech">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Pandas</span>
-                    <span class="tech-tag">JSON</span>
+                
+                <div class="project-description">
+                    <p>Script Python completo desenvolvido para análise de campanhas de marketing. Processa dados de múltiplas fontes, calcula KPIs essenciais (ROI, CTR, Conversões) e gera relatórios automatizados em múltiplos formatos.</p>
                 </div>
-                <button class="btn btn-code" onclick="executarScript()">
-                    <i class="fas fa-play"></i> Executar Script
-                </button>
-                <pre id="output"><code>Clique no botão para executar o script...</code></pre>
+                
+                <div class="project-stats">
+                    <div class="stat">
+                        <div class="stat-number">92%</div>
+                        <div class="stat-label">AUTOMAÇÃO</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">48%</div>
+                        <div class="stat-label">EFICIÊNCIA</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">JSON/CSV/HTML</div>
+                        <div class="stat-label">EXPORTAÇÃO</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">22</div>
+                        <div class="stat-label">MONITORAMENTO</div>
+                    </div>
+                </div>
+                
+                <div class="project-actions">
+                    <a href="https://github.com/N1ghthill" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-github"></i> Código Fonte
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-download"></i> Baixar Projeto
+                    </a>
+                    <a href="#" class="btn btn-accent">
+                        <i class="fas fa-play-circle"></i> Demonstração
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contato -->
+    <!-- Contact Section -->
     <section id="contato" class="section">
-        <h2><i class="fas fa-envelope"></i> Contato</h2>
-        <div class="contact-info">
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <div>
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
                     <h3>Email</h3>
                     <p>irving@ruas.dev.br</p>
+                    <p class="subtext">Respondo em até 24 horas</p>
                 </div>
-            </div>
-            <div class="contact-item">
-                <i class="fab fa-github"></i>
-                <div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
                     <h3>GitHub</h3>
                     <p>github.com/N1ghthill</p>
+                    <p class="subtext">Projetos open-source e contribuições</p>
                 </div>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
                     <h3>Localização</h3>
-                    <p>Debian Linux</p>
+                    <p>Brasil • Trabalho Remoto</p>
+                    <p class="subtext">Disponível para projetos globais</p>
                 </div>
             </div>
         </div>
@@ -130,417 +270,88 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <p>© 2024 N1ghthill. Todos os direitos reservados.</p>
-            <p class="tech-stack">
-                <i class="fab fa-html5"></i>
-                <i class="fab fa-css3-alt"></i>
-                <i class="fab fa-js"></i>
-                <i class="fab fa-python"></i>
-                <i class="fab fa-git-alt"></i>
-                <i class="fab fa-linux"></i>
-            </p>
-            <p class="footer-note">
-                Desenvolvido com <i class="fas fa-heart"></i> no terminal do Debian
-            </p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Irving Ruas</h3>
+                    <p>Desenvolvedor & Analista de Dados especializado em soluções 
+                        inteligentes para análise de dados e automação de processos.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/N1ghthill" target="_blank" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="mailto:irving@ruas.dev.br" class="social-link" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="#home">
+                                <i class="fas fa-chevron-right"></i> Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#sobre">
+                                <i class="fas fa-chevron-right"></i> Sobre Mim
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#projetos">
+                                <i class="fas fa-chevron-right"></i> Projetos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contato">
+                                <i class="fas fa-chevron-right"></i> Contato
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Tecnologias</h3>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-python"></i> Python
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-database"></i> Análise de Dados
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-robot"></i> Automação
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-chart-line"></i> Dashboards
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="current-year">2024</span> Irving Ruas. Todos os direitos reservados.</p>
+                <p>Desenvolvido com <i class="fas fa-heart heart"></i> e Python</p>
+            </div>
         </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
-</body>
-</html>
-                    <h3 class="project-title">Analisador de Campanhas</h3>
-                    <p class="project-description">
-                        Script Python para análise de campanhas de marketing com geração automática de relatórios, gráficos e cálculo de ROI.
-                    </p>
-                    
-                    <div class="project-features">
-                        <span><i class="fas fa-check"></i> Análise estatística</span>
-                        <span><i class="fas fa-check"></i> Relatórios JSON/CSV</span>
-                        <span><i class="fas fa-check"></i> Gráficos automáticos</span>
-                        <span><i class="fas fa-check"></i> CLI interativa</span>
-                    </div>
-                    
-                    <div class="project-tech">
-                        <span>Pandas</span>
-                        <span>Matplotlib</span>
-                        <span>JSON</span>
-                        <span>CSV</span>
-                    </div>
-                </div>
-                
-                <div class="project-footer">
-                    <button class="btn btn-small" onclick="runProjectDemo(1)">
-                        <i class="fas fa-play"></i>
-                        <span>Demo</span>
-                    </button>
-                    <a href="scripts/analise_campanhas.py" class="btn btn-small btn-outline">
-                        <i class="fas fa-code"></i>
-                        <span>Código</span>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-header">
-                    <div class="project-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <div class="project-badges">
-                        <span class="badge web">Web</span>
-                        <span class="badge js">JS</span>
-                    </div>
-                </div>
-                
-                <div class="project-content">
-                    <h3 class="project-title">Portfólio Digital</h3>
-                    <p class="project-description">
-                        Site portfólio com design moderno, responsivo e interativo. Focado em performance e experiência do usuário.
-                    </p>
-                    
-                    <div class="project-features">
-                        <span><i class="fas fa-check"></i> Design Responsivo</span>
-                        <span><i class="fas fa-check"></i> Animações CSS3</span>
-                        <span><i class="fas fa-check"></i> JavaScript Interativo</span>
-                        <span><i class="fas fa-check"></i> Otimizado SEO</span>
-                    </div>
-                    
-                    <div class="project-tech">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                        <span>Git</span>
-                    </div>
-                </div>
-                
-                <div class="project-footer">
-                    <button class="btn btn-small" onclick="runProjectDemo(2)">
-                        <i class="fas fa-eye"></i>
-                        <span>Preview</span>
-                    </button>
-                    <a href="https://github.com/N1ghthill/meu-site" target="_blank" class="btn btn-small btn-outline">
-                        <i class="fab fa-github"></i>
-                        <span>Repositório</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Skills Section -->
-<section id="skills" class="section">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">
-                <i class="fas fa-cogs"></i>
-                <span>Skills & <span class="text-gradient">Tecnologias</span></span>
-            </h2>
-            <p class="section-subtitle">Tecnologias que domino e ferramentas que utilizo no dia a dia</p>
-        </div>
-        
-        <div class="skills-grid">
-            <div class="skill-category">
-                <div class="category-header">
-                    <i class="fab fa-python"></i>
-                    <h3>Backend & Data</h3>
-                </div>
-                <div class="skill-tags">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Pandas</span>
-                    <span class="skill-tag">NumPy</span>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">API REST</span>
-                    <span class="skill-tag">Git</span>
-                </div>
-            </div>
-            
-            <div class="skill-category">
-                <div class="category-header">
-                    <i class="fas fa-code"></i>
-                    <h3>Frontend</h3>
-                </div>
-                <div class="skill-tags">
-                    <span class="skill-tag">HTML5</span>
-                    <span class="skill-tag">CSS3</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">Responsive Design</span>
-                    <span class="skill-tag">Bootstrap</span>
-                </div>
-            </div>
-            
-            <div class="skill-category">
-                <div class="category-header">
-                    <i class="fas fa-tools"></i>
-                    <h3>Ferramentas</h3>
-                </div>
-                <div class="skill-tags">
-                    <span class="skill-tag">Linux</span>
-                    <span class="skill-tag">VS Code</span>
-                    <span class="skill-tag">GitHub</span>
-                    <span class="skill-tag">Terminal</span>
-                    <span class="skill-tag">Docker</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="section">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">
-                <i class="fas fa-envelope"></i>
-                <span>Entre em <span class="text-gradient">Contato</span></span>
-            </h2>
-            <p class="section-subtitle">Vamos conversar sobre seu próximo projeto ou oportunidade</p>
-        </div>
-        
-        <div class="contact-grid">
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <h3>Email</h3>
-                <p>irving@ruas.dev.br</p>
-                <a href="mailto:irving@ruas.dev.br" class="btn btn-small btn-outline">
-                    <i class="fas fa-paper-plane"></i>
-                    <span>Enviar Email</span>
-                </a>
-            </div>
-            
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fab fa-github"></i>
-                </div>
-                <h3>GitHub</h3>
-                <p>@N1ghthill</p>
-                <a href="https://github.com/N1ghthill" target="_blank" class="btn btn-small btn-outline">
-                    <i class="fab fa-github"></i>
-                    <span>Ver Perfil</span>
-                </a>
-            </div>
-            
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <h3>Localização</h3>
-                <p>Remoto (Brasil)</p>
-                <button class="btn btn-small btn-outline" onclick="alert('🌍 Trabalho remotamente de qualquer lugar!')">
-                    <i class="fas fa-globe"></i>
-                    <span>Disponível Global</span>
-                </button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <i class="fas fa-terminal"></i>
-                <span>Irving Ruas</span>
-            </div>
-            
-            <p class="footer-text">
-                Desenvolvedor & Analista de Dados | Transformando ideias em soluções através do código
-            </p>
-            
-            <div class="footer-social">
-                <a href="https://github.com/N1ghthill" target="_blank" class="social-link">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:irving@ruas.dev.br" class="social-link">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <button class="social-link" onclick="runTerminalDemo()">
-                    <i class="fas fa-terminal"></i>
-                </button>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; <span class="current-year">2024</span> Irving Ruas. Todos os direitos reservados.</p>
-                <p class="footer-note">
-                    <i class="fas fa-heart"></i> Desenvolvido com paixão no terminal do Debian
-                </p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- Scripts -->
-<script src="assets/js/main.js"></script>
-
-<!-- Additional CSS for sections we just added -->
-<style>
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-    }
-    
-    .skill-category {
-        background: var(--gray);
-        border-radius: 12px;
-        padding: 2rem;
-        border: 1px solid rgba(0, 217, 255, 0.1);
-    }
-    
-    .category-header {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        margin-bottom: 1.5rem;
-    }
-    
-    .category-header i {
-        font-size: 2rem;
-        color: var(--primary);
-    }
-    
-    .category-header h3 {
-        margin: 0;
-    }
-    
-    .skill-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.8rem;
-    }
-    
-    .skill-tag {
-        background: rgba(0, 217, 255, 0.1);
-        color: var(--primary);
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        font-size: 0.9rem;
-        font-weight: 500;
-        border: 1px solid rgba(0, 217, 255, 0.3);
-    }
-    
-    .contact-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-    }
-    
-    .contact-card {
-        background: var(--gray);
-        border-radius: 12px;
-        padding: 2rem;
-        text-align: center;
-        border: 1px solid rgba(0, 217, 255, 0.1);
-        transition: all 0.3s;
-    }
-    
-    .contact-card:hover {
-        transform: translateY(-5px);
-        border-color: var(--primary);
-    }
-    
-    .contact-icon {
-        width: 70px;
-        height: 70px;
-        background: rgba(0, 217, 255, 0.1);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1.5rem;
-        font-size: 2rem;
-        color: var(--primary);
-    }
-    
-    .contact-card h3 {
-        margin-bottom: 0.5rem;
-    }
-    
-    .contact-card p {
-        color: #ccc;
-        margin-bottom: 1.5rem;
-    }
-    
-    .footer {
-        background: var(--dark);
-        padding: 3rem 0;
-        border-top: 1px solid rgba(0, 217, 255, 0.1);
-        margin-top: 3rem;
-    }
-    
-    .footer-content {
-        text-align: center;
-    }
-    
-    .footer-logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--primary);
-        margin-bottom: 1.5rem;
-    }
-    
-    .footer-text {
-        color: #999;
-        max-width: 600px;
-        margin: 0 auto 2rem;
-        line-height: 1.6;
-    }
-    
-    .footer-social {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin-bottom: 2rem;
-    }
-    
-    .social-link {
-        width: 50px;
-        height: 50px;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--light);
-        text-decoration: none;
-        font-size: 1.2rem;
-        transition: all 0.3s;
-        border: none;
-        cursor: pointer;
-    }
-    
-    .social-link:hover {
-        background: var(--primary);
-        color: white;
-        transform: translateY(-3px);
-    }
-    
-    .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
-        padding-top: 2rem;
-    }
-    
-    .footer-bottom p {
-        color: #777;
-        margin: 0.5rem 0;
-    }
-    
-    .footer-note {
-        color: var(--primary);
-        font-style: italic;
-    }
-    
-    .footer-note .fa-heart {
-        color: #ff5555;
-    }
-</style>
 </body>
 </html>

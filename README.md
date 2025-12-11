@@ -1,30 +1,46 @@
-# 👋 Irving Ruas - Portfólio & Projetos
+# Portfolio - Irving Ruas
 
-[![GitHub](https://img.shields.io/badge/GitHub-IrvingRuas-black?style=for-the-badge&logo=github)](https://github.com/Irving Ruas)
-[![Python](https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python)](https://python.org)
-[![Debian](https://img.shields.io/badge/Debian-Linux-A81D33?style=for-the-badge&logo=debian)](https://debian.org)
+Portfólio profissional desenvolvido para showcase de projetos e habilidades em desenvolvimento e análise de dados.
 
-Bem-vindo ao meu portfólio online! Sou **Irving Ruas**, desenvolvedor e analista de dados, e este é meu site pessoal onde compartilho meus projetos e aprendizados.
+## 🚀 Tecnologias Utilizadas
 
-## 🌐 Site Online
-
-🔗 **Acesse:** [https://Irving Ruas.github.io/meu-site](https://Irving Ruas.github.io/meu-site)
-
-## 🚀 Projeto Principal: Analisador de Campanhas
-
-### 📊 Sobre o Script
-Um script Python completo para análise de campanhas de marketing com:
-
-- **Análise estatística** de campanhas
-- **Geração automática** de relatórios JSON
-- **Cálculo de métricas** (ROI, taxa de conversão, custo por conversão)
-- **Interface de linha de comando** interativa
-- **Exportação de dados** para múltiplos formatos
-
-### 🛠️ Tecnologias Utilizadas
-- **Python 3** + **Pandas** para análise de dados
-- **HTML5** + **CSS3** + **JavaScript** para o site
-- **Git** + **GitHub** para versionamento
-- **Debian Linux** como sistema operacional
+- **Frontend:** HTML5, CSS3 (Grid, Flexbox), JavaScript ES6+
+- **Design:** Design System próprio com variáveis CSS
+- **Ícones:** Font Awesome 6
+- **Fontes:** Google Fonts (Inter)
+- **Responsivo:** Mobile-first, design responsivo
+- **Performance:** Otimizado para velocidade
 
 ## 📁 Estrutura do Projeto
+
+meu-portfolio/
+├── index.html
+├── assets/
+│ ├── css/
+│ ├── js/
+│ └── images/
+├── scripts/
+├── relatorios/
+├── docs/
+├── .gitignore
+└── README.md
+
+
+## 🎯 Funcionalidades
+
+- ✅ Design moderno e profissional
+- ✅ Interface responsiva (mobile, tablet, desktop)
+- ✅ Navegação suave entre seções
+- ✅ Animações e efeitos visuais
+- ✅ Terminal interativo
+- ✅ Contadores animados
+- ✅ Formulário de contato
+- ✅ Links para redes sociais
+- ✅ SEO otimizado
+
+## 🚀 Como Executar
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/N1ghthill/portfolio.git
+
