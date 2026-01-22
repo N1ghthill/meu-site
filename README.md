@@ -1,46 +1,35 @@
-# Portfolio - Irving Ruas
+# Meu Site - Portfólio de Irving Ruas
 
-Portfólio profissional desenvolvido para showcase de projetos e habilidades em desenvolvimento e análise de dados.
+Portfólio profissional para apresentar projetos, habilidades e experiência.
+Professional portfolio to showcase projects, skills, and experience.
 
-## 🚀 Tecnologias Utilizadas
+## Live
+- https://meu-site-neon-seven.vercel.app
 
-- **Frontend:** HTML5, CSS3 (Grid, Flexbox), JavaScript ES6+
-- **Design:** Design System próprio com variáveis CSS
-- **Ícones:** Font Awesome 6
-- **Fontes:** Google Fonts (Inter)
-- **Responsivo:** Mobile-first, design responsivo
-- **Performance:** Otimizado para velocidade
+## Destaques | Highlights
+- Layout responsivo (mobile-first). / Responsive layout (mobile-first).
+- Seções de sobre, projetos e contato. / About, projects, and contact sections.
+- Animações e terminal interativo. / Animations and interactive terminal.
+- SEO básico com metadados. / Basic SEO metadata.
 
-## 📁 Estrutura do Projeto
+## Stack
+HTML5, CSS3, JavaScript (ES6+), Font Awesome, Google Fonts.
 
-meu-portfolio/
-├── index.html
-├── assets/
-│ ├── css/
-│ ├── js/
-│ └── images/
-├── scripts/
-├── relatorios/
-├── docs/
-├── .gitignore
-└── README.md
-
-
-## 🎯 Funcionalidades
-
-- ✅ Design moderno e profissional
-- ✅ Interface responsiva (mobile, tablet, desktop)
-- ✅ Navegação suave entre seções
-- ✅ Animações e efeitos visuais
-- ✅ Terminal interativo
-- ✅ Contadores animados
-- ✅ Formulário de contato
-- ✅ Links para redes sociais
-- ✅ SEO otimizado
-
-## 🚀 Como Executar
-
-1. Clone o repositório:
+## Rodar localmente | Run locally
 ```bash
-git clone https://github.com/N1ghthill/portfolio.git
+git clone https://github.com/N1ghthill/meu-site.git
+cd meu-site
+python -m http.server
+```
+Acesse `http://localhost:8000` no navegador.
 
+## Scripts (opcional) | Scripts (optional)
+```bash
+pip install -r requirements.txt
+python scripts/analise_campanhas.py
+```
+
+## Estrutura
+- `index.html`
+- `assets/css` e `assets/js`
+- `scripts/analise_campanhas.py`
