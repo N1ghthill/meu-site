@@ -124,6 +124,6 @@ python scripts/analise_campanhas.py
 
 📄 Licença | License
 
-### Defina aqui (MIT é uma boa para projeto-exemplo).
+### MIT
 
 
