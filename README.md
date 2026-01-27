@@ -15,6 +15,7 @@ A professional portfolio (mobile-first) with animations, an interactive terminal
 ![Status](https://img.shields.io/badge/status-active-success)
 ![Stack](https://img.shields.io/badge/stack-HTML%20%7C%20CSS%20%7C%20JS-blue)
 ![Deploy](https://img.shields.io/badge/deploy-vercel-black)
+[![Sponsor](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-brightgreen)](https://github.com/sponsors/N1ghthill)
 
 </div>
 
@@ -32,7 +33,7 @@ This project is my public **hub**: a portfolio that showcases my work and acts a
 - 🧩 Seções de **About / Projects / Contact**  
 - 🖥️ **Terminal interativo** (experiência “dev vibe”)  
 - ✨ Animações e micro-interações  
-- 🔎 SEO básico (metadados, social cards)
+- 🔎 SEO essencial (metadados, social cards)
 
 ---
 
@@ -82,48 +83,13 @@ This project is my public **hub**: a portfolio that showcases my work and acts a
 
 ---
 
-## ▶️ Rodar localmente | Run locally
+## 🔒 Uso e permissão | Usage & Permission
+Este código é **publicado para visualização** como parte do meu portfólio.  
+**Não é permitido clonar, copiar, redistribuir ou reutilizar** qualquer parte do projeto sem autorização por escrito.
 
-git clone https://github.com/N1ghthill/meu-site.git
-cd meu-site
-python -m http.server
+Para autorização, entre em contato: **irving@ruas.dev.br**
 
-Acesse: http://localhost:8000
+---
 
-## 🧪 Scripts (opcional) | Optional scripts
-pip install -r requirements.txt
-python scripts/analise_campanhas.py
-
-## 🔌 Integrações planejadas | Planned integrations
-
-### Este site será o lugar onde eu conecto e demonstro:
-
-- ferramentas internas (CLIs, automações)
-
-- projetos web (demos, landing pages)
-
-- documentação e padrões reutilizáveis
-
-- indicadores (performance, qualidade, changelog)
-
-### Veja /docs/INTEGRATIONS.md para o plano de integrações (em evolução).
-
-## ✅ Qualidade (padrão de exemplo) | Quality baseline
-
-### Performance: carregamento rápido e assets otimizados
-
-- SEO: metatags e social preview
-
-- Acessibilidade: contraste, foco e navegação por teclado
-
-- Manutenibilidade: estrutura clara + docs + convenções
-
-## 🤝 Contribuição | Contributing
-
-### Sugestões e PRs são bem-vindos — especialmente em performance, acessibilidade e melhorias de DX.
-
-📄 Licença | License
-
-### MIT
-
-
+## 📄 Licença | License
+Consulte `LICENSE`.

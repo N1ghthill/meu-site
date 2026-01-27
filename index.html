@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Irving Ruas - Desenvolvedor & Analista de Dados</title>
     <meta name="description" content="Portfólio profissional de Irving Ruas - Desenvolvedor Full Stack e Analista de Dados especializado em Python e automação">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://ruas.dev.br/">
+
+    <meta property="og:title" content="Irving Ruas - Desenvolvedor & Analista de Dados">
+    <meta property="og:description" content="Portfólio profissional com projetos em produção, automações e análises data-driven.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ruas.dev.br/">
+    <meta property="og:image" content="https://ruas.dev.br/assets/img/social-preview.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Irving Ruas - Desenvolvedor & Analista de Dados">
+    <meta name="twitter:description" content="Portfólio profissional com projetos em produção, automações e análises data-driven.">
+    <meta name="twitter:image" content="https://ruas.dev.br/assets/img/social-preview.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +41,7 @@
                     <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#apoie">Apoie</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
                 
@@ -147,8 +161,60 @@
     <section id="projetos" class="section projects">
         <div class="container">
             <h2 class="section-title">Meus Projetos</h2>
+
+            <div class="featured-project">
+                <div class="featured-content">
+                    <div class="featured-badge">
+                        <i class="fas fa-bolt"></i>
+                        <span>Em produção</span>
+                    </div>
+                    <h3>BotAssist</h3>
+                    <p class="featured-subtitle">Automatize conversas no WhatsApp com IA</p>
+                    <p class="featured-description">
+                        BotAssist é uma ferramenta desktop que conecta seu WhatsApp à IA da Groq com foco em
+                        segurança, desempenho e facilidade de uso. Ideal para atendimento ágil, organização de
+                        mensagens e ganho de produtividade no dia a dia.
+                    </p>
+                    <div class="featured-tags">
+                        <span><i class="fas fa-robot"></i> IA Groq</span>
+                        <span><i class="fas fa-shield-alt"></i> Modo anti-ban</span>
+                        <span><i class="fas fa-desktop"></i> Desktop</span>
+                        <span><i class="fas fa-bolt"></i> Automação</span>
+                    </div>
+                    <ul class="featured-highlights">
+                        <li><i class="fas fa-check-circle"></i> Interface simples para configurar e começar rápido</li>
+                        <li><i class="fas fa-check-circle"></i> Respostas inteligentes com controle de segurança</li>
+                        <li><i class="fas fa-check-circle"></i> Fluxo de trabalho otimizado para suporte e vendas</li>
+                    </ul>
+                    <div class="project-actions">
+                        <a href="https://botassist.ruas.dev.br" target="_blank" rel="noopener" class="btn btn-primary">
+                            <i class="fas fa-globe"></i> Visitar Site
+                        </a>
+                        <a href="https://github.com/N1ghthill/botassist-whatsapp" target="_blank" rel="noopener" class="btn btn-secondary">
+                            <i class="fab fa-github"></i> Repositório do App
+                        </a>
+                    </div>
+                </div>
+                <div class="featured-media">
+                    <img src="assets/img/botassist-dashboard.png" alt="Dashboard do BotAssist em modo escuro" loading="lazy">
+                    <div class="featured-metrics">
+                        <div class="metric">
+                            <div class="metric-value">Produtividade</div>
+                            <div class="metric-label">Fluxos inteligentes</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Segurança</div>
+                            <div class="metric-label">Boas práticas</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Fácil uso</div>
+                            <div class="metric-label">Setup em minutos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            <div class="project-terminal">
+            <div class="project-terminal" id="demo-campanhas">
                 <div class="terminal-header">
                     <div class="terminal-title">
                         <i class="fas fa-terminal"></i>
@@ -166,16 +232,15 @@
                         <span class="prompt">irving@analytics:~$</span> python3 analise_campanhas.py
                     </div>
                     <div class="terminal-line">===================================================</div>
-                    <div class="terminal-line">ANALISADOR DE CAMPANHAS v2.1 - IRVING RUAS</div>
+                    <div class="terminal-line">ANALISADOR DE CAMPANHAS - IRVING RUAS</div>
                     <div class="terminal-line">===================================================</div>
                     <div class="terminal-line"><br></div>
                     <div class="terminal-line">📊 <strong>MENU PRINCIPAL</strong></div>
-                    <div class="terminal-line">1. 💬 Criar dados de exemplo e analisar</div>
-                    <div class="terminal-line">2. 💬 Carregar dados de arquivo CSV</div>
-                    <div class="terminal-line">3. 💬 Gerar relatório JSON automático</div>
-                    <div class="terminal-line">4. 💬 Visualizar estatísticas completas</div>
-                    <div class="terminal-line">5. 💬 Exportar dashboard HTML</div>
-                    <div class="terminal-line">6. 💬 Sair do programa</div>
+                    <div class="terminal-line">1. 🚀 Criar dados de exemplo e analisar</div>
+                    <div class="terminal-line">2. 📂 Carregar dados de arquivo CSV</div>
+                    <div class="terminal-line">3. 📄 Gerar relatório JSON</div>
+                    <div class="terminal-line">4. 📊 Ver estatísticas completas</div>
+                    <div class="terminal-line">5. 👋 Sair do programa</div>
                     <div class="terminal-line"><br></div>
                     <div class="terminal-line">
                         <span class="prompt">opção></span> <span class="cursor">█</span>
@@ -191,42 +256,72 @@
                     <div class="project-title">
                         <h3>Analisador de Campanhas</h3>
                         <p class="project-subtitle">Irving Ruas</p>
+                        <span class="project-status">
+                            <i class="fas fa-clock"></i> Em breve
+                        </span>
                     </div>
                 </div>
                 
                 <div class="project-description">
-                    <p>Script Python completo desenvolvido para análise de campanhas de marketing. Processa dados de múltiplas fontes, calcula KPIs essenciais (ROI, CTR, Conversões) e gera relatórios automatizados em múltiplos formatos.</p>
+                    <p>Script Python para análise de campanhas de marketing. Importa dados CSV, calcula métricas essenciais (ROI, taxa de conversão e custo por conversão) e gera relatórios JSON prontos para decisão. Lançamento em breve.</p>
                 </div>
                 
                 <div class="project-stats">
                     <div class="stat">
-                        <div class="stat-number">92%</div>
-                        <div class="stat-label">AUTOMAÇÃO</div>
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">OPÇÕES NO CLI</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">48%</div>
-                        <div class="stat-label">EFICIÊNCIA</div>
+                        <div class="stat-number">CSV</div>
+                        <div class="stat-label">ENTRADA</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">JSON/CSV/HTML</div>
-                        <div class="stat-label">EXPORTAÇÃO</div>
+                        <div class="stat-number">JSON</div>
+                        <div class="stat-label">RELATÓRIO</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">22</div>
-                        <div class="stat-label">MONITORAMENTO</div>
+                        <div class="stat-number">ROI</div>
+                        <div class="stat-label">MÉTRICAS</div>
                     </div>
                 </div>
                 
                 <div class="project-actions">
-                    <a href="https://github.com/N1ghthill" target="_blank" class="btn btn-primary">
-                        <i class="fab fa-github"></i> Código Fonte
+                    <a href="mailto:irving@ruas.dev.br?subject=Analisador%20de%20Campanhas%20-%20Lista%20de%20espera" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Entrar na lista
                     </a>
-                    <a href="#" class="btn btn-secondary">
-                        <i class="fas fa-download"></i> Baixar Projeto
+                    <a href="scripts/analise_campanhas.py" target="_blank" rel="noopener" class="btn btn-secondary">
+                        <i class="fas fa-code"></i> Ver Script
                     </a>
-                    <a href="#" class="btn btn-accent">
-                        <i class="fas fa-play-circle"></i> Demonstração
+                    <a href="https://github.com/N1ghthill/meu-site/blob/main/scripts/analise_campanhas.py" target="_blank" rel="noopener" class="btn btn-accent">
+                        <i class="fab fa-github"></i> Ver no GitHub
                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="apoie" class="section support">
+        <div class="container">
+            <div class="support-card" data-pix-key="irving@ruas.dev.br" data-pix-label="Pix (e-mail)">
+                <div class="support-content">
+                    <div class="support-badge">
+                        <i class="fas fa-heart"></i>
+                        <span>Apoie meu trabalho</span>
+                    </div>
+                    <h2 class="support-title">Doações são opcionais, impacto é real</h2>
+                    <p class="support-text">
+                        Se meu trabalho te ajudou, sua doação contribui para manter projetos ativos,
+                        melhorar documentações e investir em novas soluções.
+                    </p>
+                </div>
+                <div class="support-actions">
+                    <a href="https://github.com/sponsors/N1ghthill" target="_blank" rel="noopener" class="btn btn-primary">
+                        <i class="fab fa-github"></i> Doar no GitHub
+                    </a>
+                    <button type="button" class="btn btn-secondary support-pix-btn">
+                        <i class="fas fa-qrcode"></i> Doar via Pix
+                    </button>
                 </div>
             </div>
         </div>
@@ -277,14 +372,14 @@
                     <p>Desenvolvedor & Analista de Dados especializado em soluções 
                         inteligentes para análise de dados e automação de processos.</p>
                     <div class="social-links">
-                        <a href="https://github.com/N1ghthill" target="_blank" class="social-link" aria-label="GitHub">
+                        <a href="https://github.com/N1ghthill" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/irvingruas/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
+                        <a href="https://www.instagram.com/irving.ruas/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
                         </a>
                         <a href="mailto:irving@ruas.dev.br" class="social-link" aria-label="Email">
                             <i class="fas fa-envelope"></i>
@@ -308,6 +403,11 @@
                         <li>
                             <a href="#projetos">
                                 <i class="fas fa-chevron-right"></i> Projetos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#apoie">
+                                <i class="fas fa-chevron-right"></i> Apoie
                             </a>
                         </li>
                         <li>
@@ -351,6 +451,34 @@
             </div>
         </div>
     </footer>
+
+    <div class="support-modal" aria-hidden="true">
+        <div class="support-modal-backdrop"></div>
+        <div class="support-modal-content" role="dialog" aria-modal="true" aria-label="Doação via Pix">
+            <button type="button" class="support-modal-close">
+                <i class="fas fa-times"></i> Fechar
+            </button>
+            <div class="support-modal-body">
+                <div class="support-modal-header">
+                    <h3>Pix</h3>
+                    <p class="support-modal-subtitle">Chave Pix</p>
+                </div>
+                <div class="support-pix-box">
+                    <div class="support-pix-label">Chave Pix</div>
+                    <div class="support-pix-key" data-pix-key-text></div>
+                </div>
+                <div class="support-modal-actions">
+                    <button type="button" class="btn btn-primary support-copy-btn">
+                        <i class="fas fa-copy"></i> Copiar chave
+                    </button>
+                    <a href="https://github.com/sponsors/N1ghthill" target="_blank" rel="noopener" class="btn btn-secondary support-sponsors-link">
+                        <i class="fab fa-github"></i> Abrir GitHub Sponsors
+                    </a>
+                </div>
+                <p class="support-copy-feedback" aria-live="polite"></p>
+            </div>
+        </div>
+    </div>
 
     <script src="assets/js/main.js"></script>
 </body>

@@ -188,23 +188,103 @@ document.addEventListener('DOMContentLoaded', function() {
         animationObserver.observe(element);
     });
 
-    // Project demo button functionality
-    const demoButtons = document.querySelectorAll('.btn-accent');
-    demoButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const originalText = this.innerHTML;
-            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Iniciando Demo...';
-            this.disabled = true;
-            
-            setTimeout(() => {
-                this.innerHTML = '<i class="fas fa-check"></i> Demo Disponível!';
-                setTimeout(() => {
-                    this.innerHTML = originalText;
-                    this.disabled = false;
-                }, 2000);
-            }, 1500);
+    const supportCard = document.querySelector('.support-card');
+    const pixButton = document.querySelector('.support-pix-btn');
+    const supportModal = document.querySelector('.support-modal');
+    const supportBackdrop = document.querySelector('.support-modal-backdrop');
+    const supportClose = document.querySelector('.support-modal-close');
+    const pixKeyText = document.querySelector('[data-pix-key-text]');
+    const pixSubtitle = document.querySelector('.support-modal-subtitle');
+    const copyButton = document.querySelector('.support-copy-btn');
+    const copyFeedback = document.querySelector('.support-copy-feedback');
+    const sponsorsLink = document.querySelector('.support-sponsors-link');
+
+    if (supportCard) {
+        const pixKey = (supportCard.dataset.pixKey || '').trim();
+        const pixLabel = (supportCard.dataset.pixLabel || 'Pix').trim();
+
+        if (!pixKey && pixButton) {
+            pixButton.remove();
+        }
+
+        if (pixKeyText && pixKey) {
+            pixKeyText.textContent = pixKey;
+        }
+
+        if (pixSubtitle) {
+            pixSubtitle.textContent = pixLabel || 'Pix';
+        }
+
+        function openSupportModal() {
+            if (!supportModal || !pixKey) return;
+            supportModal.classList.add('open');
+            supportModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSupportModal() {
+            if (!supportModal) return;
+            supportModal.classList.remove('open');
+            supportModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            if (copyFeedback) {
+                copyFeedback.textContent = '';
+            }
+        }
+
+        async function copyPixKey() {
+            if (!pixKey) return;
+            let copied = false;
+
+            if (navigator?.clipboard?.writeText) {
+                try {
+                    await navigator.clipboard.writeText(pixKey);
+                    copied = true;
+                } catch {
+                    copied = false;
+                }
+            }
+
+            if (!copied) {
+                const textarea = document.createElement('textarea');
+                textarea.value = pixKey;
+                textarea.setAttribute('readonly', '');
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.select();
+                copied = document.execCommand('copy');
+                document.body.removeChild(textarea);
+            }
+
+            if (copyFeedback) {
+                copyFeedback.textContent = copied
+                    ? 'Chave Pix copiada!'
+                    : 'Não foi possível copiar automaticamente. Copie manualmente.';
+            }
+        }
+
+        if (pixButton) {
+            pixButton.addEventListener('click', openSupportModal);
+        }
+
+        if (supportBackdrop) {
+            supportBackdrop.addEventListener('click', closeSupportModal);
+        }
+
+        if (supportClose) {
+            supportClose.addEventListener('click', closeSupportModal);
+        }
+
+        if (copyButton) {
+            copyButton.addEventListener('click', copyPixKey);
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeSupportModal();
+            }
         });
-    });
+    }
+
 });
