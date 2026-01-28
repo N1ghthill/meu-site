@@ -17,6 +17,8 @@ A professional portfolio (mobile-first) with animations, an interactive terminal
 ![Deploy](https://img.shields.io/badge/deploy-vercel-black)
 [![Sponsor](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-brightgreen)](https://github.com/sponsors/N1ghthill)
 
+**Apoie este portfólio no GitHub Sponsors → https://github.com/sponsors/N1ghthill**
+
 </div>
 
 ---
