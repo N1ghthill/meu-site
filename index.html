@@ -310,22 +310,23 @@
             <div class="featured-project">
                 <div class="featured-content">
                     <div class="featured-badge">
-                        <i class="fas fa-bolt"></i>
-                        <span class="lang-pt lang-inline">Em produção</span>
-                        <span class="lang-en lang-inline">Live</span>
+                        <img class="featured-badge-logo" src="assets/img/BotAssist/Logo/icon.png" alt="" width="18" height="18" decoding="async">
+                        <span class="lang-pt lang-inline">Produto em destaque</span>
+                        <span class="lang-en lang-inline">Featured product</span>
                     </div>
-                    <h3>BotAssist</h3>
+                    <h3>BotAssist WhatsApp</h3>
                     <p class="featured-subtitle">
-                        <span class="lang-pt lang-block">Automatize conversas no WhatsApp com IA.</span>
-                        <span class="lang-en lang-block">Automate WhatsApp conversations with AI.</span>
+                        <span class="lang-pt lang-block">Assistente desktop de WhatsApp com IA, perfis e controles de segurança.</span>
+                        <span class="lang-en lang-block">Desktop WhatsApp assistant with AI, profiles, and safety controls.</span>
                     </p>
                     <p class="featured-description">
                         <span class="lang-pt lang-block">
-                            BotAssist conecta seu WhatsApp a fluxos inteligentes com foco em atendimento, vendas e
-                            produtividade, mantendo segurança e controle.
+                            BotAssist organiza atendimento e automação no WhatsApp com uma UI objetiva: perfis (agentes),
+                            regras anti-ban em grupos e ferramentas opt-in com aprovação do owner.
                         </span>
                         <span class="lang-en lang-block">
-                            BotAssist connects WhatsApp to intelligent workflows focused on support, sales, and productivity, with safety and control.
+                            BotAssist turns WhatsApp support and automation into a clean desktop workflow: profiles (agents),
+                            group safety rules, and opt-in tools with owner approval.
                         </span>
                     </p>
                     <div class="featured-tags">
@@ -336,18 +337,23 @@
                         </span>
                         <span>
                             <i class="fas fa-robot"></i>
-                            <span class="lang-pt lang-inline">IA Groq</span>
-                            <span class="lang-en lang-inline">Groq AI</span>
+                            <span class="lang-pt lang-inline">IA (Groq)</span>
+                            <span class="lang-en lang-inline">AI (Groq)</span>
                         </span>
                         <span>
-                            <i class="fas fa-plug"></i>
-                            <span class="lang-pt lang-inline">Integrações</span>
-                            <span class="lang-en lang-inline">Integrations</span>
+                            <i class="fas fa-sliders"></i>
+                            <span class="lang-pt lang-inline">Perfis</span>
+                            <span class="lang-en lang-inline">Profiles</span>
                         </span>
                         <span>
-                            <i class="fas fa-bolt"></i>
-                            <span class="lang-pt lang-inline">Automação</span>
-                            <span class="lang-en lang-inline">Automation</span>
+                            <i class="fas fa-wrench"></i>
+                            <span class="lang-pt lang-inline">Tools</span>
+                            <span class="lang-en lang-inline">Tools</span>
+                        </span>
+                        <span>
+                            <i class="fas fa-arrows-rotate"></i>
+                            <span class="lang-pt lang-inline">Auto-update</span>
+                            <span class="lang-en lang-inline">Auto-update</span>
                         </span>
                         <span>
                             <i class="fas fa-desktop"></i>
@@ -358,18 +364,18 @@
                     <ul class="featured-highlights">
                         <li>
                             <i class="fas fa-check-circle"></i>
-                            <span class="lang-pt lang-inline">Perfis de agentes, prompts e modelos em um fluxo simples</span>
-                            <span class="lang-en lang-inline">Profiles, prompts and models in a simple flow</span>
+                            <span class="lang-pt lang-inline">Perfis por usuario/grupo: modelos, prompts e roteamento em um fluxo simples</span>
+                            <span class="lang-en lang-inline">Per user/group profiles: models, prompts, and routing in a simple flow</span>
                         </li>
                         <li>
                             <i class="fas fa-check-circle"></i>
-                            <span class="lang-pt lang-inline">Tools opt-in com aprovacao do owner e auditoria</span>
-                            <span class="lang-en lang-inline">Opt-in tools with owner approval and auditing</span>
+                            <span class="lang-pt lang-inline">Tools opt-in (web/arquivos/terminal/email) com aprovacao + auditoria</span>
+                            <span class="lang-en lang-inline">Opt-in tools (web/files/shell/email) with approval and auditing</span>
                         </li>
                         <li>
                             <i class="fas fa-check-circle"></i>
-                            <span class="lang-pt lang-inline">Anti-ban em grupos: mencao, allowlist e cooldown por chat</span>
-                            <span class="lang-en lang-inline">Group safety: mention, allowlist, per-chat cooldown</span>
+                            <span class="lang-pt lang-inline">Operacao real: anti-ban em grupos, cooldown, logs e auto-update</span>
+                            <span class="lang-en lang-inline">Built for ops: group safety, cooldowns, logs, and auto-updates</span>
                         </li>
                     </ul>
                     <div class="project-actions">
@@ -410,7 +416,9 @@
                                 data-src="assets/img/BotAssist/Screenshots/dashboard.png"
                                 data-label-pt="Dashboard ao vivo" data-label-en="Live dashboard"
                                 data-alt-pt="Dashboard ao vivo do BotAssist" data-alt-en="Live BotAssist dashboard"
-                                aria-pressed="true">
+                                aria-pressed="true"
+                                data-aria-label-pt="Ver tela: Dashboard ao vivo" data-aria-label-en="View screen: Live dashboard" aria-label="Ver tela: Dashboard ao vivo"
+                                data-desc-pt="Status, QR Code e atalhos em tempo real." data-desc-en="Real-time status, QR Code, and quick actions.">
                                 <img src="assets/img/BotAssist/Screenshots/dashboard.png" alt="" loading="lazy" decoding="async">
                                 <span class="featured-thumb-label">
                                     <span class="lang-pt lang-inline">Dashboard</span>
@@ -421,7 +429,9 @@
                                 data-src="assets/img/BotAssist/Screenshots/configs.png"
                                 data-label-pt="Configurações por perfil" data-label-en="Profile-based settings"
                                 data-alt-pt="Tela de configurações do BotAssist" data-alt-en="BotAssist settings screen"
-                                aria-pressed="false">
+                                aria-pressed="false"
+                                data-aria-label-pt="Ver tela: Configuracoes por perfil" data-aria-label-en="View screen: Profile settings" aria-label="Ver tela: Configuracoes por perfil"
+                                data-desc-pt="Perfis, prompts e controles essenciais em um so lugar." data-desc-en="Profiles, prompts, and essential controls in one place.">
                                 <img src="assets/img/BotAssist/Screenshots/configs.png" alt="" loading="lazy" decoding="async">
                                 <span class="featured-thumb-label">
                                     <span class="lang-pt lang-inline">Configs</span>
@@ -432,7 +442,9 @@
                                 data-src="assets/img/BotAssist/Screenshots/logs.png"
                                 data-label-pt="Logs e monitoramento" data-label-en="Logs and monitoring"
                                 data-alt-pt="Tela de logs do BotAssist" data-alt-en="BotAssist logs screen"
-                                aria-pressed="false">
+                                aria-pressed="false"
+                                data-aria-label-pt="Ver tela: Logs e monitoramento" data-aria-label-en="View screen: Logs and monitoring" aria-label="Ver tela: Logs e monitoramento"
+                                data-desc-pt="Logs claros para diagnostico, auditoria e operacao diaria." data-desc-en="Clear logs for diagnostics, auditing, and daily ops.">
                                 <img src="assets/img/BotAssist/Screenshots/logs.png" alt="" loading="lazy" decoding="async">
                                 <span class="featured-thumb-label">
                                     <span class="lang-pt lang-inline">Logs</span>
@@ -443,7 +455,9 @@
                                 data-src="assets/img/BotAssist/Screenshots/database.png"
                                 data-label-pt="Sessões e backups" data-label-en="Sessions and backups"
                                 data-alt-pt="Tela de dados e backups do BotAssist" data-alt-en="BotAssist data and backups screen"
-                                aria-pressed="false">
+                                aria-pressed="false"
+                                data-aria-label-pt="Ver tela: Sessoes e backups" data-aria-label-en="View screen: Sessions and backups" aria-label="Ver tela: Sessoes e backups"
+                                data-desc-pt="Backup local, reset seguro e controle de dados." data-desc-en="Local backups, safe reset, and data control.">
                                 <img src="assets/img/BotAssist/Screenshots/database.png" alt="" loading="lazy" decoding="async">
                                 <span class="featured-thumb-label">
                                     <span class="lang-pt lang-inline">Dados</span>
@@ -454,7 +468,9 @@
                                 data-src="assets/img/BotAssist/Screenshots/auto-update.png"
                                 data-label-pt="Atualizações automáticas" data-label-en="Auto-updates"
                                 data-alt-pt="Tela de atualização do BotAssist" data-alt-en="BotAssist update screen"
-                                aria-pressed="false">
+                                aria-pressed="false"
+                                data-aria-label-pt="Ver tela: Atualizacoes automaticas" data-aria-label-en="View screen: Auto-updates" aria-label="Ver tela: Atualizacoes automaticas"
+                                data-desc-pt="Atualizacoes guiadas com status e instalacao simples." data-desc-en="Guided updates with clear status and easy install.">
                                 <img src="assets/img/BotAssist/Screenshots/auto-update.png" alt="" loading="lazy" decoding="async">
                                 <span class="featured-thumb-label">
                                     <span class="lang-pt lang-inline">Update</span>
@@ -462,6 +478,14 @@
                                 </span>
                             </button>
                         </div>
+                        <p class="featured-gallery-caption" data-featured-gallery-caption>
+                            <span class="lang-pt lang-inline">Status, QR Code e atalhos em tempo real.</span>
+                            <span class="lang-en lang-inline">Real-time status, QR Code, and quick actions.</span>
+                        </p>
+                        <p class="featured-gallery-hint">
+                            <span class="lang-pt lang-inline">Dica: clique nas miniaturas para trocar de tela.</span>
+                            <span class="lang-en lang-inline">Tip: click thumbnails to switch screens.</span>
+                        </p>
                     </div>
                     <div class="featured-metrics">
                         <div class="metric">

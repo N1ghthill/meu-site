@@ -66,6 +66,22 @@ document.addEventListener('DOMContentLoaded', function() {
             copyFeedbackElement.textContent = '';
         }
 
+
+        // Keep aria labels in sync for the featured gallery counter on language changes.
+        const featuredGallery = document.querySelector('[data-featured-gallery]');
+        if (featuredGallery) {
+            const counter = featuredGallery.querySelector('[data-featured-gallery-counter]');
+            const thumbs = Array.from(featuredGallery.querySelectorAll('[data-featured-thumb]'));
+            const total = thumbs.length || 1;
+            const activeIndex = thumbs.findIndex((b) => b.classList.contains('is-active'));
+            if (counter && activeIndex >= 0) {
+                counter.setAttribute(
+                    'aria-label',
+                    currentLanguage === 'en' ? `${activeIndex + 1} of ${total}` : `${activeIndex + 1} de ${total}`
+                );
+            }
+        }
+
         localStorage.setItem('language', currentLanguage);
     };
 
@@ -80,14 +96,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-
     // Featured gallery (BotAssist screenshots)
     const gallery = document.querySelector('[data-featured-gallery]');
     if (gallery) {
         const mainImage = gallery.querySelector('.featured-gallery-main');
         const chip = gallery.querySelector('.featured-gallery-chip');
         const counter = gallery.querySelector('[data-featured-gallery-counter]');
+        const caption = gallery.querySelector('[data-featured-gallery-caption]');
         const thumbs = Array.from(gallery.querySelectorAll('[data-featured-thumb]'));
+        let switchToken = 0;
+
+        const setCaption = (descPt, descEn) => {
+            if (!caption) return;
+            const pt = caption.querySelector('.lang-pt');
+            const en = caption.querySelector('.lang-en');
+            if (pt && descPt) pt.textContent = descPt;
+            if (en && descEn) en.textContent = descEn;
+        };
 
         const setActiveThumb = (nextIndex) => {
             const total = thumbs.length || 1;
@@ -100,13 +125,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const btn = thumbs[safeIndex];
             if (!btn || !mainImage) return;
+
             const src = btn.dataset.src || '';
             const altPt = btn.dataset.altPt || '';
             const altEn = btn.dataset.altEn || '';
             const labelPt = btn.dataset.labelPt || '';
             const labelEn = btn.dataset.labelEn || '';
+            const descPt = btn.dataset.descPt || '';
+            const descEn = btn.dataset.descEn || '';
 
-            if (src) mainImage.src = src;
             mainImage.dataset.altPt = altPt;
             mainImage.dataset.altEn = altEn;
             mainImage.alt = currentLanguage === 'en' ? (altEn || altPt) : (altPt || altEn);
@@ -126,6 +153,32 @@ document.addEventListener('DOMContentLoaded', function() {
                     'aria-label',
                     currentLanguage === 'en' ? `${safeIndex + 1} of ${total}` : `${safeIndex + 1} de ${total}`
                 );
+            }
+
+            setCaption(descPt, descEn);
+
+            // Fade transition when switching screenshots.
+            if (src && mainImage.getAttribute('src') !== src) {
+                const token = ++switchToken;
+                mainImage.classList.add('is-switching');
+                const finish = () => {
+                    if (token !== switchToken) return;
+                    mainImage.classList.remove('is-switching');
+                };
+
+                const onLoad = () => {
+                    mainImage.removeEventListener('load', onLoad);
+                    finish();
+                };
+                mainImage.addEventListener('load', onLoad);
+
+                // swap slightly after the class applies
+                window.setTimeout(() => {
+                    if (token !== switchToken) return;
+                    mainImage.src = src;
+                }, 30);
+
+                window.setTimeout(finish, 450);
             }
         };
 

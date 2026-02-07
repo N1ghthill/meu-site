@@ -665,8 +665,8 @@ nav {
 .featured-media > img {
     width: 100%;
     border-radius: 16px;
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 24px 70px rgba(0, 217, 255, 0.08), var(--shadow);
     display: block;
 }
 
@@ -674,8 +674,8 @@ nav {
 .featured-gallery-frame {
     position: relative;
     border-radius: 16px;
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 26px 80px rgba(0, 217, 255, 0.10), var(--shadow);
     overflow: hidden;
     background: rgba(0, 0, 0, 0.35);
 }
@@ -743,8 +743,9 @@ nav {
 
 .featured-thumb img {
     width: 100%;
-    height: 64px;
-    object-fit: cover;
+    height: 58px;
+    object-fit: contain;
+    background: rgba(0, 0, 0, 0.35);
     display: block;
     filter: saturate(0.95) contrast(1.03);
 }
@@ -1359,4 +1360,42 @@ h1, h2, h3, .section-title {
     width: 28px;
     height: 28px;
     display: block;
+}
+
+
+.featured-badge-logo {
+    width: 18px;
+    height: 18px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 2px;
+}
+
+
+.featured-gallery-caption {
+    margin-top: 0.85rem;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.featured-gallery-hint {
+    margin-top: 0.35rem;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.85rem;
+}
+
+.featured-gallery-main {
+    transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.featured-gallery-main.is-switching {
+    opacity: 0;
+    transform: scale(0.995);
+}
+
+.featured-thumb:focus-visible {
+    outline: 3px solid rgba(0, 217, 255, 0.45);
+    outline-offset: 3px;
 }
