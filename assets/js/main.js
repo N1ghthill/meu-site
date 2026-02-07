@@ -1,6 +1,143 @@
 // assets/js/main.js
 
 document.addEventListener('DOMContentLoaded', function() {
+    let currentLanguage = 'pt';
+    const languageButtons = document.querySelectorAll('.lang-btn');
+    const copyMessages = {
+        pt: {
+            success: 'Chave Pix copiada!',
+            error: 'Não foi possível copiar automaticamente. Copie manualmente.',
+        },
+        en: {
+            success: 'Pix key copied!',
+            error: 'Unable to copy automatically. Please copy manually.',
+        },
+    };
+
+    const setLanguage = (lang) => {
+        currentLanguage = lang === 'en' ? 'en' : 'pt';
+        document.body.classList.toggle('language-en', currentLanguage === 'en');
+        document.body.classList.toggle('language-pt', currentLanguage === 'pt');
+        document.documentElement.lang = currentLanguage === 'en' ? 'en' : 'pt-BR';
+
+        languageButtons.forEach((button) => {
+            button.setAttribute(
+                'aria-pressed',
+                button.dataset.lang === currentLanguage ? 'true' : 'false'
+            );
+        });
+
+        document.querySelectorAll('[data-aria-label-pt]').forEach((element) => {
+            const label = currentLanguage === 'en'
+                ? element.dataset.ariaLabelEn
+                : element.dataset.ariaLabelPt;
+            if (label) {
+                element.setAttribute('aria-label', label);
+            }
+        });
+
+        document.querySelectorAll('meta[data-content-pt]').forEach((meta) => {
+            const content = currentLanguage === 'en'
+                ? meta.dataset.contentEn
+                : meta.dataset.contentPt;
+            if (content) {
+                meta.setAttribute('content', content);
+            }
+        });
+
+        document.querySelectorAll('[data-alt-pt]').forEach((element) => {
+            const alt = currentLanguage === 'en'
+                ? element.dataset.altEn
+                : element.dataset.altPt;
+            if (alt) {
+                element.setAttribute('alt', alt);
+            }
+        });
+
+        const titleElement = document.querySelector('title[data-title-pt]');
+        if (titleElement) {
+            document.title = currentLanguage === 'en'
+                ? titleElement.dataset.titleEn
+                : titleElement.dataset.titlePt;
+        }
+
+        const copyFeedbackElement = document.querySelector('.support-copy-feedback');
+        if (copyFeedbackElement) {
+            copyFeedbackElement.textContent = '';
+        }
+
+        localStorage.setItem('language', currentLanguage);
+    };
+
+    const storedLanguage = localStorage.getItem('language');
+    const browserLanguage = (navigator.language || '').toLowerCase();
+    const initialLanguage = storedLanguage || (browserLanguage.startsWith('en') ? 'en' : 'pt');
+    setLanguage(initialLanguage);
+
+    if (languageButtons.length) {
+        languageButtons.forEach((button) => {
+            button.addEventListener('click', () => setLanguage(button.dataset.lang));
+        });
+    }
+
+
+    // Featured gallery (BotAssist screenshots)
+    const gallery = document.querySelector('[data-featured-gallery]');
+    if (gallery) {
+        const mainImage = gallery.querySelector('.featured-gallery-main');
+        const chip = gallery.querySelector('.featured-gallery-chip');
+        const counter = gallery.querySelector('[data-featured-gallery-counter]');
+        const thumbs = Array.from(gallery.querySelectorAll('[data-featured-thumb]'));
+
+        const setActiveThumb = (nextIndex) => {
+            const total = thumbs.length || 1;
+            const safeIndex = Math.max(0, Math.min(total - 1, nextIndex));
+            thumbs.forEach((btn, i) => {
+                const active = i === safeIndex;
+                btn.classList.toggle('is-active', active);
+                btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+            });
+
+            const btn = thumbs[safeIndex];
+            if (!btn || !mainImage) return;
+            const src = btn.dataset.src || '';
+            const altPt = btn.dataset.altPt || '';
+            const altEn = btn.dataset.altEn || '';
+            const labelPt = btn.dataset.labelPt || '';
+            const labelEn = btn.dataset.labelEn || '';
+
+            if (src) mainImage.src = src;
+            mainImage.dataset.altPt = altPt;
+            mainImage.dataset.altEn = altEn;
+            mainImage.alt = currentLanguage === 'en' ? (altEn || altPt) : (altPt || altEn);
+
+            if (chip) {
+                const pt = chip.querySelector('.lang-pt');
+                const en = chip.querySelector('.lang-en');
+                if (pt && labelPt) pt.textContent = labelPt;
+                if (en && labelEn) en.textContent = labelEn;
+            }
+
+            if (counter) {
+                const pos = String(safeIndex + 1).padStart(2, '0');
+                const tot = String(total).padStart(2, '0');
+                counter.textContent = `${pos}/${tot}`;
+                counter.setAttribute(
+                    'aria-label',
+                    currentLanguage === 'en' ? `${safeIndex + 1} of ${total}` : `${safeIndex + 1} de ${total}`
+                );
+            }
+        };
+
+        thumbs.forEach((btn, i) => {
+            btn.addEventListener('click', () => setActiveThumb(i));
+        });
+
+        // Ensure the default state is consistent.
+        const initial = thumbs.findIndex((b) => b.classList.contains('is-active'));
+        setActiveThumb(initial >= 0 ? initial : 0);
+    }
+
     // Menu mobile
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
@@ -69,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Terminal typing effect
     let optionIndex = 0;
-    const options = ['1', '2', '3', '4', '5', '6'];
+    const options = ['1', '2', '3', '4', '5'];
     let typingInterval;
     
     function startTerminalTyping() {
@@ -79,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function() {
         typingInterval = setInterval(() => {
             // Remove previous number if exists
             const previousNumber = cursor.previousSibling;
-            if (previousNumber && previousNumber.nodeType === 3 && /[1-6]/.test(previousNumber.textContent)) {
+            if (previousNumber && previousNumber.nodeType === 3 && /[1-5]/.test(previousNumber.textContent)) {
                 previousNumber.remove();
             }
             
@@ -194,25 +331,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const supportBackdrop = document.querySelector('.support-modal-backdrop');
     const supportClose = document.querySelector('.support-modal-close');
     const pixKeyText = document.querySelector('[data-pix-key-text]');
-    const pixSubtitle = document.querySelector('.support-modal-subtitle');
     const copyButton = document.querySelector('.support-copy-btn');
     const copyFeedback = document.querySelector('.support-copy-feedback');
-    const sponsorsLink = document.querySelector('.support-sponsors-link');
 
     if (supportCard) {
         const pixKey = (supportCard.dataset.pixKey || '').trim();
-        const pixLabel = (supportCard.dataset.pixLabel || 'Pix').trim();
-
         if (!pixKey && pixButton) {
             pixButton.remove();
         }
 
         if (pixKeyText && pixKey) {
             pixKeyText.textContent = pixKey;
-        }
-
-        if (pixSubtitle) {
-            pixSubtitle.textContent = pixLabel || 'Pix';
         }
 
         function openSupportModal() {
@@ -258,9 +387,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             if (copyFeedback) {
+                const messageSet = copyMessages[currentLanguage] || copyMessages.pt;
                 copyFeedback.textContent = copied
-                    ? 'Chave Pix copiada!'
-                    : 'Não foi possível copiar automaticamente. Copie manualmente.';
+                    ? messageSet.success
+                    : messageSet.error;
             }
         }
 

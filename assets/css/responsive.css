@@ -22,6 +22,20 @@
     .nav-links {
         display: none;
     }
+
+    .nav-actions {
+        gap: 0.6rem;
+        margin-left: auto;
+    }
+
+    .lang-switch {
+        padding: 0.2rem;
+    }
+
+    .lang-btn {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
     
     .mobile-menu-btn {
         display: block;
@@ -57,6 +71,10 @@
 
     .featured-metrics {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .featured-gallery-thumbs {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .support-card {
@@ -204,6 +222,9 @@
 
     .featured-metrics {
         grid-template-columns: 1fr;
+    }
+    .featured-gallery-thumbs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .support-card {
