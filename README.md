@@ -1,32 +1,79 @@
-# Meu Site / My Website
+<div align="center">
+  <img src="assets/img/Ruas.dev/ruas_logo.png" alt="Ruas.dev" width="320" />
+  <h1>Meu Site / My Website</h1>
+  <p><strong>Premium bilingual portfolio</strong> for business positioning, partnerships and software showcase.</p>
 
-Portfólio oficial da **Ruas.dev** para posicionamento comercial, captação de parcerias e apresentação dos principais softwares em produção.
+  <p>
+    <a href="https://ruas.dev.br/"><img alt="PT-BR Live" src="https://img.shields.io/badge/PT--BR-Live-1F66FF?style=for-the-badge"></a>
+    <a href="https://ruas.dev.br/en"><img alt="EN Live" src="https://img.shields.io/badge/EN-Live-5A35FF?style=for-the-badge"></a>
+    <a href="https://vercel.com/"><img alt="Deploy Vercel" src="https://img.shields.io/badge/Deploy-Vercel-111111?style=for-the-badge&logo=vercel&logoColor=white"></a>
+    <a href="LICENSE"><img alt="License MIT" src="https://img.shields.io/badge/License-MIT-22A75A?style=for-the-badge"></a>
+  </p>
 
-Official **Ruas.dev** portfolio for commercial positioning, partnership acquisition, and showcasing production-grade software.
+  <p>
+    <a href="https://ruas.dev.br/">PT Site</a> •
+    <a href="https://ruas.dev.br/en">EN Site</a> •
+    <a href="https://github.com/sponsors/N1ghthill">GitHub Sponsors</a> •
+    <a href="mailto:irving@ruas.dev.br">Contact</a>
+  </p>
+</div>
 
-- Produção (PT): `https://ruas.dev.br/`
-- Production (EN): `https://ruas.dev.br/en`
+---
+
+![Ruas.dev Social Preview](assets/img/social-preview.png)
+
+## Quick Navigation
+- [PT-BR](#pt-br)
+- [EN](#en)
+- [Repository Layout](#repository-layout)
+- [Run Locally](#run-locally)
+- [Deploy](#deploy)
+- [Documentation](#documentation)
+- [License](#license)
 
 ## PT-BR
 ### Objetivo
-Este repositório funciona como canal institucional para:
+Este repositório é o canal institucional da **Ruas.dev** para:
 - apresentar software com contexto real de operação
-- converter visitantes em contatos de trabalho e parceria
-- manter credibilidade pública da marca Ruas.dev
+- converter visitantes em contatos comerciais e parcerias
+- manter credibilidade pública da marca
 - centralizar apoio via GitHub Sponsors e Pix
 
 ### Produtos em destaque
-- **Nexo**: CRM multi-tenant (nova aposta estratégica)
-- **BotAssist WhatsApp**: software principal em produção
-- **BotAssist Site**: canal oficial de aquisição e downloads
+| Produto | Papel | Link |
+| --- | --- | --- |
+| Nexo | CRM multi-tenant (nova aposta estratégica) | `https://github.com/N1ghthill/nexo` |
+| BotAssist WhatsApp | Software principal em produção | `https://github.com/N1ghthill/botassist-whatsapp` |
+| BotAssist Site | Canal oficial de aquisição/download | `https://github.com/N1ghthill/botassist-site` |
 
-### Stack
-- HTML5
-- CSS3 (layout responsivo + motion leve)
-- JavaScript (navegação, reveal e modal Pix)
-- Vercel (deploy)
+### Diferenciais do portfólio
+- versão bilíngue (`/` e `/en`)
+- copy premium orientada a conversão
+- fluxo de contato e parceria com escassez controlada
+- doação via GitHub Sponsors e Pix
 
-### Estrutura
+## EN
+### Purpose
+This repository is the official **Ruas.dev** channel to:
+- showcase software with real operational context
+- convert visitors into business and partnership leads
+- maintain public brand credibility
+- centralize support through GitHub Sponsors and Pix
+
+### Featured products
+| Product | Role | Link |
+| --- | --- | --- |
+| Nexo | Multi-tenant CRM (new strategic bet) | `https://github.com/N1ghthill/nexo` |
+| BotAssist WhatsApp | Flagship software in production | `https://github.com/N1ghthill/botassist-whatsapp` |
+| BotAssist Site | Official acquisition/download channel | `https://github.com/N1ghthill/botassist-site` |
+
+### Portfolio highlights
+- bilingual version (`/` and `/en`)
+- premium conversion-oriented copy
+- selective partnership flow
+- support via GitHub Sponsors and Pix
+
+## Repository Layout
 ```text
 .
 ├── index.html
@@ -45,45 +92,7 @@ Este repositório funciona como canal institucional para:
 └── requirements.txt
 ```
 
-### Rodando localmente
-```bash
-python3 -m http.server 8000
-```
-Acesse:
-- `http://localhost:8000/` (PT)
-- `http://localhost:8000/en/` (EN)
-
-### Deploy
-Push na branch de produção do projeto conectado no Vercel dispara deploy automático.
-
-Fluxo manual (opcional):
-```bash
-vercel link --yes
-vercel pull --yes --environment=production
-vercel build
-vercel deploy --prebuilt --prod
-```
-
-## EN
-### Purpose
-This repository is the official channel to:
-- present software with real operational context
-- convert visitors into business and partnership leads
-- maintain public credibility for the Ruas.dev brand
-- centralize support through GitHub Sponsors and Pix
-
-### Featured products
-- **Nexo**: multi-tenant CRM (new strategic bet)
-- **BotAssist WhatsApp**: flagship software in production
-- **BotAssist Site**: official acquisition and download channel
-
-### Stack
-- HTML5
-- CSS3 (responsive layout + subtle motion)
-- JavaScript (navigation, reveal effects, Pix modal)
-- Vercel (deployment)
-
-### Local run
+## Run Locally
 ```bash
 python3 -m http.server 8000
 ```
@@ -91,10 +100,10 @@ Open:
 - `http://localhost:8000/` (PT)
 - `http://localhost:8000/en/` (EN)
 
-### Deployment
-A push to the production branch configured in Vercel triggers automatic deployment.
+## Deploy
+Push to the production branch configured in Vercel triggers automatic deployment.
 
-Optional manual flow:
+Manual flow (optional):
 ```bash
 vercel link --yes
 vercel pull --yes --environment=production
@@ -102,12 +111,12 @@ vercel build
 vercel deploy --prebuilt --prod
 ```
 
-## Documentação / Documentation
+## Documentation
 - `docs/README.md`
 - `docs/DEPLOY_VERCEL.md`
 - `docs/PROJECT_STRUCTURE.md`
 - `docs/SCRIPTS.md`
 - `docs/ROADMAP.md`
 
-## Licença / License
-MIT. Consulte/See `LICENSE`.
+## License
+MIT. See `LICENSE`.
