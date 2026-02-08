@@ -64,6 +64,11 @@
     padding: 0.65rem;
   }
 
+  .lang-switch {
+    margin-left: auto;
+    margin-right: 0.4rem;
+  }
+
   .nav-links.open {
     display: flex;
   }
@@ -140,6 +145,10 @@
   .signal-strip a {
     width: 100%;
     text-align: center;
+  }
+
+  .lang-switch {
+    margin-right: 0;
   }
 
   .section-head {

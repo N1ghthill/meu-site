@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.body;
+  const isEnglish = document.documentElement.lang.toLowerCase().startsWith('en');
   const menuButton = document.querySelector('.menu-btn');
   const menuIcon = menuButton ? menuButton.querySelector('i') : null;
   const navLinksContainer = document.querySelector('.nav-links');
@@ -100,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     yearElement.textContent = String(new Date().getFullYear());
   }
 
-  const supportSection = document.getElementById('apoie');
+  const supportSection = document.getElementById('apoie') || document.getElementById('support');
   const pixButton = document.querySelector('.support-pix-btn');
   const modal = document.querySelector('.support-modal');
   const modalBackdrop = document.querySelector('.support-modal-backdrop');
@@ -169,8 +170,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     copyFeedback.textContent = copied
-      ? 'Chave Pix copiada com sucesso.'
-      : 'Não foi possível copiar automaticamente. Copie manualmente.';
+      ? (isEnglish ? 'Pix key copied successfully.' : 'Chave Pix copiada com sucesso.')
+      : (isEnglish
+        ? 'Unable to copy automatically. Please copy it manually.'
+        : 'Nao foi possivel copiar automaticamente. Copie manualmente.');
   }
 
   if (pixButton) {

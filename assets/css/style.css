@@ -154,6 +154,40 @@ a {
   gap: 0.35rem;
 }
 
+.lang-switch {
+  margin-left: 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  padding: 0.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.76);
+}
+
+.lang-link {
+  text-decoration: none;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-soft);
+  border-radius: 999px;
+  padding: 0.3rem 0.52rem;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.lang-link:hover {
+  color: var(--brand-blue);
+  background: rgba(31, 102, 255, 0.1);
+}
+
+.lang-link.is-active {
+  color: #ffffff;
+  background: linear-gradient(120deg, var(--brand-blue), var(--brand-violet));
+  box-shadow: 0 8px 16px rgba(31, 102, 255, 0.26);
+}
+
 .nav-links a {
   text-decoration: none;
   font-weight: 700;

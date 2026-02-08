@@ -1,45 +1,37 @@
-<div align="center">
+# Meu Site / My Website
 
-# Meu Site — Portfólio de Irving Ruas
+Portfólio oficial da **Ruas.dev** para posicionamento comercial, captação de parcerias e apresentação dos principais softwares em produção.
 
-Portfólio premium da **Ruas.dev** para posicionamento comercial, captação de parcerias e apresentação dos principais softwares da operação.
+Official **Ruas.dev** portfolio for commercial positioning, partnership acquisition, and showcasing production-grade software.
 
-**Produção:** https://ruas.dev.br  
-**Projeto Vercel:** https://meu-site-neon-seven.vercel.app
+- Produção (PT): `https://ruas.dev.br/`
+- Production (EN): `https://ruas.dev.br/en`
 
-![status](https://img.shields.io/badge/status-active-success)
-![stack](https://img.shields.io/badge/stack-HTML%20%7C%20CSS%20%7C%20JS-blue)
-![deploy](https://img.shields.io/badge/deploy-vercel-black)
-
-</div>
-
----
-
-## Objetivo
-Este repositório é o canal institucional para:
-
+## PT-BR
+### Objetivo
+Este repositório funciona como canal institucional para:
 - apresentar software com contexto real de operação
 - converter visitantes em contatos de trabalho e parceria
 - manter credibilidade pública da marca Ruas.dev
 - centralizar apoio via GitHub Sponsors e Pix
 
-A comunicação do site foi desenhada com posicionamento de **exclusividade**, **escassez controlada** e **curadoria de projetos**.
-
-## Produtos em destaque
+### Produtos em destaque
 - **Nexo**: CRM multi-tenant (nova aposta estratégica)
 - **BotAssist WhatsApp**: software principal em produção
 - **BotAssist Site**: canal oficial de aquisição e downloads
 
-## Stack
+### Stack
 - HTML5
 - CSS3 (layout responsivo + motion leve)
-- JavaScript (interações de navegação, reveal e modal Pix)
-- Deploy: Vercel
+- JavaScript (navegação, reveal e modal Pix)
+- Vercel (deploy)
 
-## Estrutura
+### Estrutura
 ```text
 .
 ├── index.html
+├── en/
+│   └── index.html
 ├── assets/
 │   ├── css/
 │   ├── img/
@@ -53,19 +45,18 @@ A comunicação do site foi desenhada com posicionamento de **exclusividade**, *
 └── requirements.txt
 ```
 
-## Execução local
+### Rodando localmente
 ```bash
 python3 -m http.server 8000
 ```
+Acesse:
+- `http://localhost:8000/` (PT)
+- `http://localhost:8000/en/` (EN)
 
-Acesse `http://localhost:8000`.
+### Deploy
+Push na branch de produção do projeto conectado no Vercel dispara deploy automático.
 
-## Deploy e CI/CD (Vercel)
-### Fluxo principal
-1. Commit + push na branch de produção configurada no Vercel.
-2. Vercel dispara build/deploy automaticamente pela integração com Git.
-
-### Fluxo manual de validação (CLI)
+Fluxo manual (opcional):
 ```bash
 vercel link --yes
 vercel pull --yes --environment=production
@@ -73,32 +64,50 @@ vercel build
 vercel deploy --prebuilt --prod
 ```
 
-## Hardening aplicado
-`vercel.json` foi adicionado para:
+## EN
+### Purpose
+This repository is the official channel to:
+- present software with real operational context
+- convert visitors into business and partnership leads
+- maintain public credibility for the Ruas.dev brand
+- centralize support through GitHub Sponsors and Pix
 
-- definir comportamento limpo de URL (`cleanUrls`, `trailingSlash`)
-- aplicar headers de segurança (ex.: `X-Content-Type-Options`, `X-Frame-Options`)
-- habilitar cache forte para assets estáticos em `/assets/*`
+### Featured products
+- **Nexo**: multi-tenant CRM (new strategic bet)
+- **BotAssist WhatsApp**: flagship software in production
+- **BotAssist Site**: official acquisition and download channel
 
-## Script auxiliar (Python)
-Arquivo: `scripts/analise_campanhas.py`
+### Stack
+- HTML5
+- CSS3 (responsive layout + subtle motion)
+- JavaScript (navigation, reveal effects, Pix modal)
+- Vercel (deployment)
 
-Instalação:
+### Local run
 ```bash
-pip install -r requirements.txt
+python3 -m http.server 8000
+```
+Open:
+- `http://localhost:8000/` (PT)
+- `http://localhost:8000/en/` (EN)
+
+### Deployment
+A push to the production branch configured in Vercel triggers automatic deployment.
+
+Optional manual flow:
+```bash
+vercel link --yes
+vercel pull --yes --environment=production
+vercel build
+vercel deploy --prebuilt --prod
 ```
 
-Execução:
-```bash
-python3 scripts/analise_campanhas.py
-```
-
-## Documentação
+## Documentação / Documentation
 - `docs/README.md`
 - `docs/DEPLOY_VERCEL.md`
 - `docs/PROJECT_STRUCTURE.md`
 - `docs/SCRIPTS.md`
 - `docs/ROADMAP.md`
 
-## Licença
-MIT. Consulte `LICENSE`.
+## Licença / License
+MIT. Consulte/See `LICENSE`.
