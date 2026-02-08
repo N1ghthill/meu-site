@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ? (isEnglish ? 'Pix key copied successfully.' : 'Chave Pix copiada com sucesso.')
       : (isEnglish
         ? 'Unable to copy automatically. Please copy it manually.'
-        : 'Nao foi possivel copiar automaticamente. Copie manualmente.');
+        : 'Não foi possível copiar automaticamente. Copie manualmente.');
   }
 
   if (pixButton) {
