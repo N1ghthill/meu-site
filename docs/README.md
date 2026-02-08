@@ -1,8 +1,12 @@
 # Documentação
 
-Esta pasta concentra informações de apoio para manter o projeto organizado e fácil de apresentar.
+Esta pasta reúne a documentação operacional do portfólio `meu-site`.
 
 ## Conteúdo
-- `PROJECT_STRUCTURE.md` — visão geral da estrutura e responsabilidades das pastas.
-- `SCRIPTS.md` — instruções de uso do script Python e outputs gerados.
-- `ROADMAP.md` — próximos passos e ideias de evolução.
+- `DEPLOY_VERCEL.md`: fluxo de deploy, validação e troubleshooting com Vercel CLI.
+- `PROJECT_STRUCTURE.md`: estrutura de arquivos e responsabilidades.
+- `SCRIPTS.md`: uso do script Python auxiliar.
+- `ROADMAP.md`: evolução planejada do produto/site.
+
+## Objetivo
+Manter o repositório público com padrão profissional de operação, manutenção e handoff.

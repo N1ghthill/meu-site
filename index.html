@@ -1,916 +1,463 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-title-pt="Irving Ruas - Desenvolvedor & Analista de Dados" data-title-en="Irving Ruas - Developer & Data Analyst">Irving Ruas - Desenvolvedor & Analista de Dados</title>
-    <meta name="description" content="Portfólio de Irving Ruas — automação, integrações (WhatsApp/APIs), dashboards e análise de dados com foco em resultados." data-content-pt="Portfólio de Irving Ruas — automação, integrações (WhatsApp/APIs), dashboards e análise de dados com foco em resultados." data-content-en="Irving Ruas portfolio — automation, integrations (WhatsApp/APIs), dashboards, and data analysis focused on results.">
-    <meta name="robots" content="index,follow">
-    <link rel="canonical" href="https://ruas.dev.br/">
-    <link rel="icon" href="assets/img/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
-    <meta name="theme-color" content="#0b1324">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Irving Ruas | Software, Automação e CRM</title>
+  <meta name="description" content="Portfólio de Irving Ruas com foco em software real para operação comercial: BotAssist WhatsApp, Nexo CRM e produtos digitais para crescimento.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://ruas.dev.br/">
 
-    <meta property="og:title" content="Irving Ruas - Desenvolvedor & Analista de Dados" data-content-pt="Irving Ruas - Desenvolvedor & Analista de Dados" data-content-en="Irving Ruas - Developer & Data Analyst">
-    <meta property="og:description" content="Automação, integrações (WhatsApp/APIs), dashboards e análise de dados com foco em resultados." data-content-pt="Automação, integrações (WhatsApp/APIs), dashboards e análise de dados com foco em resultados." data-content-en="Automation, integrations (WhatsApp/APIs), dashboards, and data analysis focused on results.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ruas.dev.br/">
-    <meta property="og:image" content="https://ruas.dev.br/assets/img/social-preview.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Irving Ruas - Portfolio">
+  <meta property="og:title" content="Irving Ruas | Software, Automação e CRM">
+  <meta property="og:description" content="Portfólio de produtos em produção e novas apostas: BotAssist WhatsApp e Nexo CRM.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ruas.dev.br/">
+  <meta property="og:image" content="https://ruas.dev.br/assets/img/social-preview.png">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Irving Ruas - Desenvolvedor & Analista de Dados" data-content-pt="Irving Ruas - Desenvolvedor & Analista de Dados" data-content-en="Irving Ruas - Developer & Data Analyst">
-    <meta name="twitter:description" content="Automação, integrações (WhatsApp/APIs), dashboards e análise de dados com foco em resultados." data-content-pt="Automação, integrações (WhatsApp/APIs), dashboards e análise de dados com foco em resultados." data-content-en="Automation, integrations (WhatsApp/APIs), dashboards, and data analysis focused on results.">
-    <meta name="twitter:image" content="https://ruas.dev.br/assets/img/social-preview.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Irving Ruas | Software, Automação e CRM">
+  <meta name="twitter:description" content="Software para atendimento, CRM e automação com foco em resultado de negócio.">
+  <meta name="twitter:image" content="https://ruas.dev.br/assets/img/social-preview.png">
+
+  <meta name="theme-color" content="#f2f6ff">
+
+  <link rel="icon" href="assets/img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
-<body class="language-pt">
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">
-                    <div class="logo-icon"><img src="assets/img/favicon-32.png" alt="" width="28" height="28" decoding="async"></div>
-                    <div class="logo-text">
-                        Irving <span>Ruas</span>
-                    </div>
-                </a>
-                
-                <ul class="nav-links">
-                    <li>
-                        <a href="#home" class="active">
-                            <span class="lang-pt lang-inline">Início</span>
-                            <span class="lang-en lang-inline">Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#sobre">
-                            <span class="lang-pt lang-inline">Sobre</span>
-                            <span class="lang-en lang-inline">About</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#projetos">
-                            <span class="lang-pt lang-inline">Projetos</span>
-                            <span class="lang-en lang-inline">Projects</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#apoie">
-                            <span class="lang-pt lang-inline">Parcerias</span>
-                            <span class="lang-en lang-inline">Partnerships</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#contato">
-                            <span class="lang-pt lang-inline">Contato</span>
-                            <span class="lang-en lang-inline">Contact</span>
-                        </a>
-                    </li>
-                </ul>
+<body>
+  <div class="page-glow" aria-hidden="true"></div>
 
-                <div class="nav-actions">
-                    <div class="lang-switch" role="group" aria-label="Seleção de idioma" data-aria-label-pt="Seleção de idioma" data-aria-label-en="Language selector">
-                        <button type="button" class="lang-btn" data-lang="pt" aria-pressed="true" aria-label="Português" data-aria-label-pt="Português" data-aria-label-en="Portuguese">PT</button>
-                        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" aria-label="Inglês" data-aria-label-pt="Inglês" data-aria-label-en="English">EN</button>
-                    </div>
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a class="brand" href="#inicio" aria-label="Ir para início">
+          <img src="assets/img/Ruas.dev/icone-favcon.png" alt="Ícone Ruas.dev" width="38" height="38" decoding="async">
+          <span class="brand-text">Irving <strong>Ruas</strong></span>
+        </a>
 
-                    <button class="mobile-menu-btn" aria-label="Menu mobile" data-aria-label-pt="Menu mobile" data-aria-label-en="Mobile menu">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </nav>
-        </div>
-    </header>
+        <button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-code"></i>
-                    <span class="lang-pt lang-inline">Automação • Dados • Produtos Digitais</span>
-                    <span class="lang-en lang-inline">Automation • Data • Digital Products</span>
-                </div>
-                
-                <h1>
-                    <span class="lang-pt lang-inline">Olá, eu sou</span>
-                    <span class="lang-en lang-inline">Hi, I'm</span>
-                    <span class="highlight">Irving Ruas</span>
-                </h1>
-                <h2>
-                    <span class="lang-pt lang-block">Automação e dados para acelerar vendas e operações.</span>
-                    <span class="lang-en lang-block">Automation and data to grow revenue and operational efficiency.</span>
-                </h2>
-                <p>
-                    <span class="lang-pt lang-block">
-                        Crio soluções end-to-end que conectam atendimento, integrações (WhatsApp/APIs), dashboards e análise de campanhas
-                        para gerar eficiência, escala e decisão rápida.
-                    </span>
-                    <span class="lang-en lang-block">
-                        I build end-to-end solutions that connect support, integrations (WhatsApp/APIs), dashboards, and campaign analytics
-                        to deliver efficiency, scale, and faster decisions.
-                    </span>
-                </p>
-                
-                <ul class="hero-results">
-                    <li>
-                        <i class="fas fa-chart-line"></i>
-                        <div>
-                            <span class="lang-pt lang-block">+40% em vendas com estratégias digitais e automação.</span>
-                            <span class="lang-en lang-block">+40% sales lift with digital strategy and automation.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <i class="fas fa-stopwatch"></i>
-                        <div>
-                            <span class="lang-pt lang-block">-30% no tempo de atendimento, elevando a experiência do usuário.</span>
-                            <span class="lang-en lang-block">30% faster support time, improving user experience.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <i class="fas fa-coins"></i>
-                        <div>
-                            <span class="lang-pt lang-block">Redução significativa de custos com reestruturação de processos.</span>
-                            <span class="lang-en lang-block">Significant cost reduction through process redesign.</span>
-                        </div>
-                    </li>
-                </ul>
-                
-                <div class="btn-group">
-                    <a href="#contato" class="btn btn-primary">
-                        <i class="fas fa-comments"></i>
-                        <span class="lang-pt lang-inline">Acesso Premium</span>
-                        <span class="lang-en lang-inline">Premium Access</span>
-                    </a>
-                    <a href="#projetos" class="btn btn-secondary">
-                        <i class="fas fa-rocket"></i>
-                        <span class="lang-pt lang-inline">Ver projetos</span>
-                        <span class="lang-en lang-inline">View projects</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="sobre" class="section">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="lang-pt lang-inline">Sobre</span>
-                <span class="lang-en lang-inline">About</span>
-            </h2>
-            
-            <div class="about-grid">
-                <div class="about-card">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3>
-                            <span class="lang-pt lang-inline">Resultados</span>
-                            <span class="lang-en lang-inline">Results</span>
-                        </h3>
-                    </div>
-                    <p>
-                        <span class="lang-pt lang-block">Resultados reais em projetos de automação, atendimento e dados.</span>
-                        <span class="lang-en lang-block">Real results from automation, support, and data projects.</span>
-                    </p>
-                    <ul class="about-results">
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <span class="lang-pt lang-block">+40% em vendas com estratégias digitais e automação.</span>
-                                <span class="lang-en lang-block">+40% sales lift with digital strategy and automation.</span>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <span class="lang-pt lang-block">-30% no tempo de atendimento, elevando a experiência do usuário.</span>
-                                <span class="lang-en lang-block">30% faster support time, improving user experience.</span>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <span class="lang-pt lang-block">Redução significativa de custos com reestruturação de processos.</span>
-                                <span class="lang-en lang-block">Significant cost reduction through process redesign.</span>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <span class="lang-pt lang-block">Integrações que conectam atendimento, vendas e operação.</span>
-                                <span class="lang-en lang-block">Integrations that connect support, sales, and operations.</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="about-card">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-layer-group"></i>
-                        </div>
-                        <h3>
-                            <span class="lang-pt lang-inline">Soluções</span>
-                            <span class="lang-en lang-inline">Solutions</span>
-                        </h3>
-                    </div>
-                    <p>
-                        <span class="lang-pt lang-block">Atendimento, integrações, dashboards e automação com foco em crescimento e eficiência.</span>
-                        <span class="lang-en lang-block">Support, integrations, dashboards, and automation focused on growth and efficiency.</span>
-                    </p>
-                    <div class="solution-grid">
-                        <div class="solution-item">
-                            <i class="fas fa-robot"></i>
-                            <span class="lang-pt lang-inline">Automação</span>
-                            <span class="lang-en lang-inline">Automation</span>
-                        </div>
-                        <div class="solution-item">
-                            <i class="fab fa-whatsapp"></i>
-                            <span class="lang-pt lang-inline">WhatsApp</span>
-                            <span class="lang-en lang-inline">WhatsApp</span>
-                        </div>
-                        <div class="solution-item">
-                            <i class="fas fa-plug"></i>
-                            <span class="lang-pt lang-inline">Integrações</span>
-                            <span class="lang-en lang-inline">Integrations</span>
-                        </div>
-                        <div class="solution-item">
-                            <i class="fas fa-headset"></i>
-                            <span class="lang-pt lang-inline">Atendimento</span>
-                            <span class="lang-en lang-inline">Support</span>
-                        </div>
-                        <div class="solution-item">
-                            <i class="fas fa-chart-pie"></i>
-                            <span class="lang-pt lang-inline">Dashboards</span>
-                            <span class="lang-en lang-inline">Dashboards</span>
-                        </div>
-                        <div class="solution-item">
-                            <i class="fas fa-database"></i>
-                            <span class="lang-pt lang-inline">Dados</span>
-                            <span class="lang-en lang-inline">Data</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="about-card">
-                    <div class="card-header">
-                        <div class="card-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3>
-                            <span class="lang-pt lang-inline">Perfil</span>
-                            <span class="lang-en lang-inline">Profile</span>
-                        </h3>
-                    </div>
-                    <p>
-                        <span class="lang-pt lang-block">
-                            Profissional focado em automação e dados, unindo visão de negócio, engenharia de integrações
-                            e análise para gerar resultados rápidos.
-                        </span>
-                        <span class="lang-en lang-block">
-                            Automation and data professional blending business vision, integration engineering, and analytics
-                            to deliver fast results.
-                        </span>
-                    </p>
-                    <div class="highlight-info">
-                        <i class="fas fa-star"></i>
-                        <span class="lang-pt lang-inline">Disponível para projetos remotos e parcerias</span>
-                        <span class="lang-en lang-inline">Available for remote projects and partnerships</span>
-                    </div>
-                    <p class="profile-note">
-                        <span class="lang-pt lang-inline">Entrega ponta a ponta: diagnóstico, implementação e acompanhamento de métricas.</span>
-                        <span class="lang-en lang-inline">End-to-end delivery: diagnosis, implementation, and metric tracking.</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projetos" class="section projects">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="lang-pt lang-inline">Projetos</span>
-                <span class="lang-en lang-inline">Projects</span>
-            </h2>
-
-            <div class="featured-project">
-                <div class="featured-content">
-                    <div class="featured-badge">
-                        <img class="featured-badge-logo" src="assets/img/BotAssist/Logo/icon.png" alt="" width="18" height="18" decoding="async">
-                        <span class="lang-pt lang-inline">Produto em destaque</span>
-                        <span class="lang-en lang-inline">Featured product</span>
-                    </div>
-                    <h3>BotAssist WhatsApp</h3>
-                    <p class="featured-subtitle">
-                        <span class="lang-pt lang-block">Assistente desktop de WhatsApp com IA, perfis e controles de segurança.</span>
-                        <span class="lang-en lang-block">Desktop WhatsApp assistant with AI, profiles, and safety controls.</span>
-                    </p>
-                    <p class="featured-description">
-                        <span class="lang-pt lang-block">
-                            BotAssist organiza atendimento e automação no WhatsApp com uma UI objetiva: perfis (agentes),
-                            regras anti-ban em grupos e ferramentas opt-in com aprovação do owner.
-                        </span>
-                        <span class="lang-en lang-block">
-                            BotAssist turns WhatsApp support and automation into a clean desktop workflow: profiles (agents),
-                            group safety rules, and opt-in tools with owner approval.
-                        </span>
-                    </p>
-                    <div class="featured-tags">
-                        <span>
-                            <i class="fab fa-whatsapp"></i>
-                            <span class="lang-pt lang-inline">WhatsApp</span>
-                            <span class="lang-en lang-inline">WhatsApp</span>
-                        </span>
-                        <span>
-                            <i class="fas fa-robot"></i>
-                            <span class="lang-pt lang-inline">IA (Groq)</span>
-                            <span class="lang-en lang-inline">AI (Groq)</span>
-                        </span>
-                        <span>
-                            <i class="fas fa-sliders"></i>
-                            <span class="lang-pt lang-inline">Perfis</span>
-                            <span class="lang-en lang-inline">Profiles</span>
-                        </span>
-                        <span>
-                            <i class="fas fa-wrench"></i>
-                            <span class="lang-pt lang-inline">Tools</span>
-                            <span class="lang-en lang-inline">Tools</span>
-                        </span>
-                        <span>
-                            <i class="fas fa-arrows-rotate"></i>
-                            <span class="lang-pt lang-inline">Auto-update</span>
-                            <span class="lang-en lang-inline">Auto-update</span>
-                        </span>
-                        <span>
-                            <i class="fas fa-desktop"></i>
-                            <span class="lang-pt lang-inline">Desktop</span>
-                            <span class="lang-en lang-inline">Desktop</span>
-                        </span>
-                    </div>
-                    <ul class="featured-highlights">
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span class="lang-pt lang-inline">Perfis por usuario/grupo: modelos, prompts e roteamento em um fluxo simples</span>
-                            <span class="lang-en lang-inline">Per user/group profiles: models, prompts, and routing in a simple flow</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span class="lang-pt lang-inline">Tools opt-in (web/arquivos/terminal/email) com aprovacao + auditoria</span>
-                            <span class="lang-en lang-inline">Opt-in tools (web/files/shell/email) with approval and auditing</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <span class="lang-pt lang-inline">Operacao real: anti-ban em grupos, cooldown, logs e auto-update</span>
-                            <span class="lang-en lang-inline">Built for ops: group safety, cooldowns, logs, and auto-updates</span>
-                        </li>
-                    </ul>
-                    <div class="project-actions">
-                        <a href="https://botassist.ruas.dev.br" target="_blank" rel="noopener" class="btn btn-primary">
-                            <i class="fas fa-globe"></i>
-                            <span class="lang-pt lang-inline">Visitar site</span>
-                            <span class="lang-en lang-inline">Visit website</span>
-                        </a>
-                        <a href="https://github.com/N1ghthill/botassist-whatsapp" target="_blank" rel="noopener" class="btn btn-secondary">
-                            <i class="fab fa-github"></i>
-                            <span class="lang-pt lang-inline">Repositório do app</span>
-                            <span class="lang-en lang-inline">App repository</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="featured-media">
-                    <div class="featured-gallery" data-featured-gallery>
-                        <div class="featured-gallery-frame">
-                            <img
-                                class="featured-gallery-main"
-                                src="assets/img/BotAssist/Screenshots/dashboard.png"
-                                alt="Dashboard ao vivo do BotAssist"
-                                data-alt-pt="Dashboard ao vivo do BotAssist"
-                                data-alt-en="Live BotAssist dashboard"
-                                loading="lazy"
-                                decoding="async"
-                            >
-                            <div class="featured-gallery-overlay">
-                                <span class="featured-gallery-chip">
-                                    <span class="lang-pt lang-inline">Dashboard ao vivo</span>
-                                    <span class="lang-en lang-inline">Live dashboard</span>
-                                </span>
-                                <span class="featured-gallery-counter" data-featured-gallery-counter aria-label="1 de 5">01/05</span>
-                            </div>
-                        </div>
-                        <div class="featured-gallery-thumbs" data-featured-gallery-thumbs>
-                            <button type="button" class="featured-thumb is-active" data-featured-thumb data-index="1"
-                                data-src="assets/img/BotAssist/Screenshots/dashboard.png"
-                                data-label-pt="Dashboard ao vivo" data-label-en="Live dashboard"
-                                data-alt-pt="Dashboard ao vivo do BotAssist" data-alt-en="Live BotAssist dashboard"
-                                aria-pressed="true"
-                                data-aria-label-pt="Ver tela: Dashboard ao vivo" data-aria-label-en="View screen: Live dashboard" aria-label="Ver tela: Dashboard ao vivo"
-                                data-desc-pt="Status, QR Code e atalhos em tempo real." data-desc-en="Real-time status, QR Code, and quick actions.">
-                                <img src="assets/img/BotAssist/Screenshots/dashboard.png" alt="" loading="lazy" decoding="async">
-                                <span class="featured-thumb-label">
-                                    <span class="lang-pt lang-inline">Dashboard</span>
-                                    <span class="lang-en lang-inline">Dashboard</span>
-                                </span>
-                            </button>
-                            <button type="button" class="featured-thumb" data-featured-thumb data-index="2"
-                                data-src="assets/img/BotAssist/Screenshots/configs.png"
-                                data-label-pt="Configurações por perfil" data-label-en="Profile-based settings"
-                                data-alt-pt="Tela de configurações do BotAssist" data-alt-en="BotAssist settings screen"
-                                aria-pressed="false"
-                                data-aria-label-pt="Ver tela: Configuracoes por perfil" data-aria-label-en="View screen: Profile settings" aria-label="Ver tela: Configuracoes por perfil"
-                                data-desc-pt="Perfis, prompts e controles essenciais em um so lugar." data-desc-en="Profiles, prompts, and essential controls in one place.">
-                                <img src="assets/img/BotAssist/Screenshots/configs.png" alt="" loading="lazy" decoding="async">
-                                <span class="featured-thumb-label">
-                                    <span class="lang-pt lang-inline">Configs</span>
-                                    <span class="lang-en lang-inline">Settings</span>
-                                </span>
-                            </button>
-                            <button type="button" class="featured-thumb" data-featured-thumb data-index="3"
-                                data-src="assets/img/BotAssist/Screenshots/logs.png"
-                                data-label-pt="Logs e monitoramento" data-label-en="Logs and monitoring"
-                                data-alt-pt="Tela de logs do BotAssist" data-alt-en="BotAssist logs screen"
-                                aria-pressed="false"
-                                data-aria-label-pt="Ver tela: Logs e monitoramento" data-aria-label-en="View screen: Logs and monitoring" aria-label="Ver tela: Logs e monitoramento"
-                                data-desc-pt="Logs claros para diagnostico, auditoria e operacao diaria." data-desc-en="Clear logs for diagnostics, auditing, and daily ops.">
-                                <img src="assets/img/BotAssist/Screenshots/logs.png" alt="" loading="lazy" decoding="async">
-                                <span class="featured-thumb-label">
-                                    <span class="lang-pt lang-inline">Logs</span>
-                                    <span class="lang-en lang-inline">Logs</span>
-                                </span>
-                            </button>
-                            <button type="button" class="featured-thumb" data-featured-thumb data-index="4"
-                                data-src="assets/img/BotAssist/Screenshots/database.png"
-                                data-label-pt="Sessões e backups" data-label-en="Sessions and backups"
-                                data-alt-pt="Tela de dados e backups do BotAssist" data-alt-en="BotAssist data and backups screen"
-                                aria-pressed="false"
-                                data-aria-label-pt="Ver tela: Sessoes e backups" data-aria-label-en="View screen: Sessions and backups" aria-label="Ver tela: Sessoes e backups"
-                                data-desc-pt="Backup local, reset seguro e controle de dados." data-desc-en="Local backups, safe reset, and data control.">
-                                <img src="assets/img/BotAssist/Screenshots/database.png" alt="" loading="lazy" decoding="async">
-                                <span class="featured-thumb-label">
-                                    <span class="lang-pt lang-inline">Dados</span>
-                                    <span class="lang-en lang-inline">Data</span>
-                                </span>
-                            </button>
-                            <button type="button" class="featured-thumb" data-featured-thumb data-index="5"
-                                data-src="assets/img/BotAssist/Screenshots/auto-update.png"
-                                data-label-pt="Atualizações automáticas" data-label-en="Auto-updates"
-                                data-alt-pt="Tela de atualização do BotAssist" data-alt-en="BotAssist update screen"
-                                aria-pressed="false"
-                                data-aria-label-pt="Ver tela: Atualizacoes automaticas" data-aria-label-en="View screen: Auto-updates" aria-label="Ver tela: Atualizacoes automaticas"
-                                data-desc-pt="Atualizacoes guiadas com status e instalacao simples." data-desc-en="Guided updates with clear status and easy install.">
-                                <img src="assets/img/BotAssist/Screenshots/auto-update.png" alt="" loading="lazy" decoding="async">
-                                <span class="featured-thumb-label">
-                                    <span class="lang-pt lang-inline">Update</span>
-                                    <span class="lang-en lang-inline">Update</span>
-                                </span>
-                            </button>
-                        </div>
-                        <p class="featured-gallery-caption" data-featured-gallery-caption>
-                            <span class="lang-pt lang-inline">Status, QR Code e atalhos em tempo real.</span>
-                            <span class="lang-en lang-inline">Real-time status, QR Code, and quick actions.</span>
-                        </p>
-                        <p class="featured-gallery-hint">
-                            <span class="lang-pt lang-inline">Dica: clique nas miniaturas para trocar de tela.</span>
-                            <span class="lang-en lang-inline">Tip: click thumbnails to switch screens.</span>
-                        </p>
-                    </div>
-                    <div class="featured-metrics">
-                        <div class="metric">
-                            <div class="metric-value">
-                                <span class="lang-pt lang-inline">Produtividade</span>
-                                <span class="lang-en lang-inline">Productivity</span>
-                            </div>
-                            <div class="metric-label">
-                                <span class="lang-pt lang-inline">Fluxos inteligentes</span>
-                                <span class="lang-en lang-inline">Smart workflows</span>
-                            </div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">
-                                <span class="lang-pt lang-inline">Segurança</span>
-                                <span class="lang-en lang-inline">Safety</span>
-                            </div>
-                            <div class="metric-label">
-                                <span class="lang-pt lang-inline">Owner + aprovação</span>
-                                <span class="lang-en lang-inline">Owner + approval</span>
-                            </div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">
-                                <span class="lang-pt lang-inline">Operação</span>
-                                <span class="lang-en lang-inline">Operations</span>
-                            </div>
-                            <div class="metric-label">
-                                <span class="lang-pt lang-inline">Logs e status</span>
-                                <span class="lang-en lang-inline">Logs and status</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-terminal" id="demo-campanhas">
-                <div class="terminal-header">
-                    <div class="terminal-title">
-                        <i class="fas fa-terminal"></i>
-                        <span>analise_campanhas.py - Irving Ruas</span>
-                    </div>
-                    <div class="terminal-buttons">
-                        <div class="terminal-button close-btn"></div>
-                        <div class="terminal-button minimize-btn"></div>
-                        <div class="terminal-button maximize-btn"></div>
-                    </div>
-                </div>
-                
-                <div class="terminal-body">
-                    <div class="terminal-line">
-                        <span class="prompt">irving@analytics:~$</span> python3 analise_campanhas.py
-                    </div>
-                    <div class="terminal-line">===================================================</div>
-                    <div class="terminal-line">ANALISADOR DE CAMPANHAS - IRVING RUAS</div>
-                    <div class="terminal-line">===================================================</div>
-                    <div class="terminal-line"><br></div>
-                    <div class="terminal-line">📊 <strong>MENU PRINCIPAL</strong></div>
-                    <div class="terminal-line">1. 🚀 Criar dados de exemplo e analisar</div>
-                    <div class="terminal-line">2. 📂 Carregar dados de arquivo CSV</div>
-                    <div class="terminal-line">3. 📄 Gerar relatório JSON</div>
-                    <div class="terminal-line">4. 📊 Ver estatísticas completas</div>
-                    <div class="terminal-line">5. 👋 Sair do programa</div>
-                    <div class="terminal-line"><br></div>
-                    <div class="terminal-line">
-                        <span class="prompt">opção></span> <span class="cursor">█</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-info">
-                <div class="project-header">
-                    <div class="project-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="project-title">
-                        <h3>
-                            <span class="lang-pt lang-inline">Analisador de Campanhas</span>
-                            <span class="lang-en lang-inline">Campaign Analyzer</span>
-                        </h3>
-                        <p class="project-subtitle">Irving Ruas</p>
-                        <span class="project-status">
-                            <i class="fas fa-clock"></i>
-                            <span class="lang-pt lang-inline">Em breve</span>
-                            <span class="lang-en lang-inline">Coming soon</span>
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="project-description">
-                    <p>
-                        <span class="lang-pt lang-block">
-                            Script Python para análise de campanhas de marketing. Importa dados CSV, calcula métricas essenciais
-                            (ROI, taxa de conversão e custo por conversão) e gera relatórios JSON prontos para decisão. Lançamento em breve.
-                        </span>
-                        <span class="lang-en lang-block">
-                            Python CLI to analyze marketing campaigns. It reads CSV data, calculates core metrics (ROI, conversion rate, cost per conversion),
-                            and generates decision-ready JSON reports. Coming soon.
-                        </span>
-                    </p>
-                </div>
-                
-                <div class="project-stats">
-                    <div class="stat">
-                        <div class="stat-number">5</div>
-                        <div class="stat-label">
-                            <span class="lang-pt lang-inline">OPÇÕES NO CLI</span>
-                            <span class="lang-en lang-inline">CLI OPTIONS</span>
-                        </div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">CSV</div>
-                        <div class="stat-label">
-                            <span class="lang-pt lang-inline">ENTRADA</span>
-                            <span class="lang-en lang-inline">INPUT</span>
-                        </div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">JSON</div>
-                        <div class="stat-label">
-                            <span class="lang-pt lang-inline">RELATÓRIO</span>
-                            <span class="lang-en lang-inline">REPORT</span>
-                        </div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">ROI</div>
-                        <div class="stat-label">
-                            <span class="lang-pt lang-inline">MÉTRICAS</span>
-                            <span class="lang-en lang-inline">METRICS</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-actions">
-                    <a href="mailto:irving@ruas.dev.br?subject=Analisador%20de%20Campanhas%20-%20Lista%20de%20espera" class="btn btn-primary">
-                        <i class="fas fa-envelope"></i>
-                        <span class="lang-pt lang-inline">Entrar na lista</span>
-                        <span class="lang-en lang-inline">Join the waitlist</span>
-                    </a>
-                    <a href="scripts/analise_campanhas.py" target="_blank" rel="noopener" class="btn btn-secondary">
-                        <i class="fas fa-code"></i>
-                        <span class="lang-pt lang-inline">Ver script</span>
-                        <span class="lang-en lang-inline">View script</span>
-                    </a>
-                    <a href="https://github.com/N1ghthill/meu-site/blob/main/scripts/analise_campanhas.py" target="_blank" rel="noopener" class="btn btn-accent">
-                        <i class="fab fa-github"></i>
-                        <span class="lang-pt lang-inline">Ver no GitHub</span>
-                        <span class="lang-en lang-inline">View on GitHub</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Support Section -->
-    <section id="apoie" class="section support">
-        <div class="container">
-            <div class="support-card" data-pix-key="irving@ruas.dev.br">
-                <div class="support-content">
-                    <div class="support-badge">
-                        <i class="fas fa-heart"></i>
-                        <span class="lang-pt lang-inline">Parcerias</span>
-                        <span class="lang-en lang-inline">Partnerships</span>
-                    </div>
-                    <h2 class="support-title">
-                        <span class="lang-pt lang-block">Parcerias, automação e resultados reais.</span>
-                        <span class="lang-en lang-block">Partnerships, automation, and real results.</span>
-                    </h2>
-                    <p class="support-text">
-                        <span class="lang-pt lang-block">
-                            Se você é empreendedor ou gestor, posso ajudar com atendimento, integrações (WhatsApp/APIs),
-                            dashboards e reestruturação de processos. Apoios via GitHub Sponsors ou Pix também mantêm
-                            projetos ativos e aceleram novas soluções.
-                        </span>
-                        <span class="lang-en lang-block">
-                            If you are a founder or manager, I can help with support, integrations (WhatsApp/APIs), dashboards, and process redesign.
-                            Support via GitHub Sponsors or Pix keeps projects moving and accelerates new solutions.
-                        </span>
-                    </p>
-                </div>
-                <div class="support-actions">
-                    <a href="#contato" class="btn btn-primary">
-                        <i class="fas fa-comments"></i>
-                        <span class="lang-pt lang-inline">Vamos conversar</span>
-                        <span class="lang-en lang-inline">Let’s talk</span>
-                    </a>
-                    <a href="https://github.com/sponsors/N1ghthill" target="_blank" rel="noopener" class="btn btn-secondary">
-                        <i class="fab fa-github"></i>
-                        <span class="lang-pt lang-inline">Doar no GitHub</span>
-                        <span class="lang-en lang-inline">Donate on GitHub</span>
-                    </a>
-                    <button type="button" class="btn btn-secondary support-pix-btn">
-                        <i class="fas fa-qrcode"></i>
-                        <span class="lang-pt lang-inline">Doar via Pix</span>
-                        <span class="lang-en lang-inline">Donate via Pix</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contato" class="section">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="lang-pt lang-inline">Contato</span>
-                <span class="lang-en lang-inline">Contact</span>
-            </h2>
-            
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>Email</h3>
-                    <p>irving@ruas.dev.br</p>
-                    <p class="subtext">
-                        <span class="lang-pt lang-block">Respondo em até 24 horas.</span>
-                        <span class="lang-en lang-block">I reply within 24 hours.</span>
-                    </p>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fab fa-github"></i>
-                    </div>
-                    <h3>GitHub</h3>
-                    <p>github.com/N1ghthill</p>
-                    <p class="subtext">
-                        <span class="lang-pt lang-block">Projetos open-source e contribuições.</span>
-                        <span class="lang-en lang-block">Open-source projects and contributions.</span>
-                    </p>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h3>
-                        <span class="lang-pt lang-inline">Localização</span>
-                        <span class="lang-en lang-inline">Location</span>
-                    </h3>
-                    <p>
-                        <span class="lang-pt lang-inline">Brasil • Trabalho Remoto</span>
-                        <span class="lang-en lang-inline">Brazil • Remote work</span>
-                    </p>
-                    <p class="subtext">
-                        <span class="lang-pt lang-block">Disponível para projetos globais.</span>
-                        <span class="lang-en lang-block">Available for global projects.</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Irving Ruas</h3>
-                    <p>
-                        <span class="lang-pt lang-block">
-                            Desenvolvedor & Analista de Dados especializado em soluções inteligentes para análise de dados,
-                            automação e integrações.
-                        </span>
-                        <span class="lang-en lang-block">
-                            Developer & Data Analyst specialized in smart solutions for data analysis, automation, and integrations.
-                        </span>
-                    </p>
-                    <div class="social-links">
-                        <a href="https://github.com/N1ghthill" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/irvingruas/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://www.instagram.com/irving.ruas/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="mailto:irving@ruas.dev.br" class="social-link" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>
-                        <span class="lang-pt lang-inline">Links rápidos</span>
-                        <span class="lang-en lang-inline">Quick links</span>
-                    </h3>
-                    <ul class="footer-links">
-                        <li>
-                            <a href="#home">
-                                <i class="fas fa-chevron-right"></i>
-                                <span class="lang-pt lang-inline">Início</span>
-                                <span class="lang-en lang-inline">Home</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#sobre">
-                                <i class="fas fa-chevron-right"></i>
-                                <span class="lang-pt lang-inline">Sobre</span>
-                                <span class="lang-en lang-inline">About</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#projetos">
-                                <i class="fas fa-chevron-right"></i>
-                                <span class="lang-pt lang-inline">Projetos</span>
-                                <span class="lang-en lang-inline">Projects</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#apoie">
-                                <i class="fas fa-chevron-right"></i>
-                                <span class="lang-pt lang-inline">Parcerias</span>
-                                <span class="lang-en lang-inline">Partnerships</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#contato">
-                                <i class="fas fa-chevron-right"></i>
-                                <span class="lang-pt lang-inline">Contato</span>
-                                <span class="lang-en lang-inline">Contact</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>
-                        <span class="lang-pt lang-inline">Tecnologias</span>
-                        <span class="lang-en lang-inline">Technologies</span>
-                    </h3>
-                    <ul class="footer-links">
-                        <li>
-                            <a href="#">
-                                <i class="fab fa-python"></i>
-                                <span class="lang-pt lang-inline">Python</span>
-                                <span class="lang-en lang-inline">Python</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-database"></i>
-                                <span class="lang-pt lang-inline">Análise de Dados</span>
-                                <span class="lang-en lang-inline">Data Analysis</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-robot"></i>
-                                <span class="lang-pt lang-inline">Automação</span>
-                                <span class="lang-en lang-inline">Automation</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-chart-line"></i>
-                                <span class="lang-pt lang-inline">Dashboards</span>
-                                <span class="lang-en lang-inline">Dashboards</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>
-                    &copy; <span id="current-year">2026</span> Irving Ruas.
-                    <span class="lang-pt lang-inline">Licenciado sob MIT.</span>
-                    <span class="lang-en lang-inline">Licensed under MIT.</span>
-                </p>
-                <p>
-                    <span class="lang-pt lang-inline">Desenvolvido com</span>
-                    <span class="lang-en lang-inline">Built with</span>
-                    <i class="fas fa-heart heart"></i>
-                    <span class="lang-pt lang-inline">e Python</span>
-                    <span class="lang-en lang-inline">and Python</span>
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <div class="support-modal" aria-hidden="true">
-        <div class="support-modal-backdrop"></div>
-        <div class="support-modal-content" role="dialog" aria-modal="true" aria-label="Doação via Pix" data-aria-label-pt="Doação via Pix" data-aria-label-en="Donate via Pix">
-            <button type="button" class="support-modal-close">
-                <i class="fas fa-times"></i>
-                <span class="lang-pt lang-inline">Fechar</span>
-                <span class="lang-en lang-inline">Close</span>
-            </button>
-            <div class="support-modal-body">
-                <div class="support-modal-header">
-                    <h3>Pix</h3>
-                    <p class="support-modal-subtitle">
-                        <span class="lang-pt lang-inline">Chave Pix</span>
-                        <span class="lang-en lang-inline">Pix key</span>
-                    </p>
-                </div>
-                <div class="support-pix-box">
-                    <div class="support-pix-label">
-                        <span class="lang-pt lang-inline">Chave Pix</span>
-                        <span class="lang-en lang-inline">Pix key</span>
-                    </div>
-                    <div class="support-pix-key" data-pix-key-text></div>
-                </div>
-                <div class="support-modal-actions">
-                    <button type="button" class="btn btn-primary support-copy-btn">
-                        <i class="fas fa-copy"></i>
-                        <span class="lang-pt lang-inline">Copiar chave</span>
-                        <span class="lang-en lang-inline">Copy key</span>
-                    </button>
-                    <a href="https://github.com/sponsors/N1ghthill" target="_blank" rel="noopener" class="btn btn-secondary support-sponsors-link">
-                        <i class="fab fa-github"></i>
-                        <span class="lang-pt lang-inline">Abrir GitHub Sponsors</span>
-                        <span class="lang-en lang-inline">Open GitHub Sponsors</span>
-                    </a>
-                </div>
-                <p class="support-copy-feedback" aria-live="polite"></p>
-            </div>
-        </div>
+        <ul class="nav-links">
+          <li><a href="#inicio" class="is-active">Início</a></li>
+          <li><a href="#softwares">Softwares</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#apoie">Apoie</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <script src="assets/js/main.js"></script>
+  <main>
+    <section id="inicio" class="hero section-anchor">
+      <div class="container">
+        <div class="signal-strip" data-reveal>
+          <p><i class="fa-solid fa-circle"></i> Agenda de novos projetos: <strong>2 slots</strong> para onboarding em fevereiro.</p>
+          <a href="#contato">Aplicar para parceria</a>
+        </div>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy" data-reveal>
+          <div class="hero-kicker">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Ruas.dev • software premium para operação comercial crítica</span>
+          </div>
+
+          <h1>
+            Projetos <span>seletivos</span> para empresas que exigem execução de alto nível.
+          </h1>
+
+          <p>
+            Sou Irving Ruas. Desenvolvo software para vendas e operação sem improviso: arquitetura sólida,
+            integração com contexto real e entrega orientada a resultado. O <strong>BotAssist WhatsApp</strong>
+            já opera em produção; o <strong>Nexo</strong> é a nova plataforma estratégica para CRM multi-tenant.
+          </p>
+
+          <div class="hero-actions">
+            <a href="mailto:irving@ruas.dev.br?subject=Aplicacao%20Parceria%20Premium%20-%20Ruas.dev" class="btn btn-primary">
+              <i class="fa-solid fa-crown"></i>
+              Aplicar para parceria premium
+            </a>
+            <a href="#softwares" class="btn btn-secondary">
+              <i class="fa-solid fa-rocket"></i>
+              Ver softwares
+            </a>
+            <a href="mailto:irving@ruas.dev.br?subject=Diagnostico%20Tecnico%20-%20Ruas.dev" class="btn btn-ghost">
+              <i class="fa-solid fa-envelope"></i>
+              Solicitar diagnóstico técnico
+            </a>
+          </div>
+
+          <ul class="hero-proof" aria-label="Indicadores de atuação">
+            <li><i class="fa-solid fa-circle-check"></i> BotAssist em produção com releases contínuas</li>
+            <li><i class="fa-solid fa-circle-check"></i> Arquitetura de integração WhatsApp + IA + segurança</li>
+            <li><i class="fa-solid fa-circle-check"></i> CRM Nexo em evolução para operação comercial escalável</li>
+            <li><i class="fa-solid fa-circle-check"></i> Atendimento consultivo com número limitado de projetos simultâneos</li>
+          </ul>
+
+          <div class="hero-capacity">
+            <article>
+              <span>Capacidade mensal</span>
+              <strong>2 onboardings</strong>
+            </article>
+            <article>
+              <span>Resposta inicial</span>
+              <strong>até 24h úteis</strong>
+            </article>
+            <article>
+              <span>Modelo de atuação</span>
+              <strong>parcerias seletivas</strong>
+            </article>
+          </div>
+        </div>
+
+        <aside class="hero-panel" data-reveal>
+          <div class="hero-panel-logo">
+            <img src="assets/img/Ruas.dev/ruas_logo.png" alt="Logo Ruas.dev" loading="eager" decoding="async">
+          </div>
+
+          <div class="hero-stats">
+            <article>
+              <span class="metric-title">Foco estratégico</span>
+              <strong>Nexo CRM</strong>
+              <p>Gestão de leads, contatos, atividades e matrículas com contexto multi-tenant estrito.</p>
+            </article>
+            <article>
+              <span class="metric-title">Operação validada</span>
+              <strong>BotAssist WhatsApp</strong>
+              <p>Desktop app com IA, perfis, governança anti-ban e ciclo de atualização contínuo.</p>
+            </article>
+            <article>
+              <span class="metric-title">Parcerias</span>
+              <strong>Entrada por curadoria</strong>
+              <p>Projetos novos passam por escopo e aderência para manter padrão de execução.</p>
+            </article>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="softwares" class="section softwares section-anchor">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Projetos principais</p>
+          <h2>Produtos construídos para ambientes de alta exigência operacional</h2>
+          <p>
+            Cada software abaixo representa uma frente estratégica da Ruas.dev: estabilidade em produção,
+            capacidade de evolução e visão comercial aplicada.
+          </p>
+        </div>
+
+        <div class="software-grid">
+          <article class="software-card software-card-nexo" data-reveal>
+            <header class="software-header">
+              <div class="software-brand">
+                <img src="assets/img/Nexo/nexo-icon.png" alt="Ícone do Nexo" width="38" height="38" decoding="async">
+                <div>
+                  <h3>Nexo</h3>
+                  <p>Nova aposta estratégica (acesso inicial limitado)</p>
+                </div>
+              </div>
+              <span class="software-chip">CRM Multi-tenant • Early Access</span>
+            </header>
+
+            <p class="software-description">
+              Nexo é um CRM da Ruas.dev para conectar captação, distribuição de leads, contatos,
+              atividades e matrículas por instituição, com separação de contexto e dados.
+            </p>
+
+            <ul class="software-list">
+              <li>Dashboard executivo com KPIs e filtros por período</li>
+              <li>Pipeline de leads com estágios configuráveis</li>
+              <li>Módulos para campanhas, cursos, vendedores e exportações</li>
+            </ul>
+
+            <div class="software-note">
+              <i class="fa-solid fa-camera"></i>
+              <span>Screenshots públicos em preparação. A demo é privada e liberada por agenda.</span>
+            </div>
+
+            <div class="software-actions">
+              <a class="btn btn-primary" href="https://github.com/N1ghthill/nexo" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i>
+                Ver repositório
+              </a>
+              <a class="btn btn-secondary" href="mailto:irving@ruas.dev.br?subject=Demo%20Nexo">
+                <i class="fa-solid fa-calendar-check"></i>
+                Entrar na lista de demo
+              </a>
+            </div>
+          </article>
+
+          <article class="software-card software-card-featured" data-reveal>
+            <header class="software-header">
+              <div class="software-brand">
+                <img src="assets/img/BotAssist/Logo/icon.png" alt="Ícone do BotAssist" width="38" height="38" decoding="async">
+                <div>
+                  <h3>BotAssist WhatsApp</h3>
+                  <p>Software consolidado em produção</p>
+                </div>
+              </div>
+              <span class="software-chip">Desktop + IA</span>
+            </header>
+
+            <p class="software-description">
+              Aplicativo desktop para operação via WhatsApp com IA (Groq), perfis de agentes,
+              regras de segurança para grupos, logs, manutenção e atualização automática.
+            </p>
+
+            <div class="software-note">
+              <i class="fa-solid fa-shield"></i>
+              <span>Projeto orientado a confiabilidade, governança e continuidade operacional.</span>
+            </div>
+
+            <div class="software-media">
+              <img
+                src="assets/img/BotAssist/Screenshots/dashboard.png"
+                alt="Dashboard do BotAssist"
+                class="software-main-shot"
+                loading="lazy"
+                decoding="async"
+              >
+              <div class="software-thumbs">
+                <img src="assets/img/BotAssist/Screenshots/configs.png" alt="Configurações do BotAssist" loading="lazy" decoding="async">
+                <img src="assets/img/BotAssist/Screenshots/logs.png" alt="Logs do BotAssist" loading="lazy" decoding="async">
+                <img src="assets/img/BotAssist/Screenshots/database.png" alt="Banco de dados do BotAssist" loading="lazy" decoding="async">
+                <img src="assets/img/BotAssist/Screenshots/auto-update.png" alt="Atualização do BotAssist" loading="lazy" decoding="async">
+              </div>
+            </div>
+
+            <div class="software-actions">
+              <a class="btn btn-primary" href="https://botassist.ruas.dev.br" target="_blank" rel="noopener">
+                <i class="fa-solid fa-globe"></i>
+                Visitar site
+              </a>
+              <a class="btn btn-secondary" href="https://github.com/N1ghthill/botassist-whatsapp" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i>
+                Repositório do app
+              </a>
+            </div>
+          </article>
+
+          <article class="software-card" data-reveal>
+            <header class="software-header">
+              <div class="software-brand">
+                <img src="assets/img/BotAssist/Logo/botassist_logo.png" alt="Logo do BotAssist" width="52" height="32" decoding="async">
+                <div>
+                  <h3>BotAssist Site</h3>
+                  <p>Canal oficial de aquisição e credibilidade</p>
+                </div>
+              </div>
+              <span class="software-chip">Landing + Releases</span>
+            </header>
+
+            <p class="software-description">
+              Landing page do BotAssist com proposta de valor, prova visual e integração com GitHub
+              Releases para apontar automaticamente os instaladores da versão mais recente.
+            </p>
+
+            <ul class="software-list">
+              <li>Fluxo direto para downloads de release</li>
+              <li>FAQ, seções de produto e doação</li>
+              <li>Deploy orientado para domínio próprio no Vercel</li>
+            </ul>
+
+            <div class="software-actions">
+              <a class="btn btn-primary" href="https://botassist.ruas.dev.br" target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                Abrir landing
+              </a>
+              <a class="btn btn-secondary" href="https://github.com/N1ghthill/botassist-site" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i>
+                Repositório do site
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="diferenciais" class="section differentiators section-anchor">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Como eu trabalho</p>
+          <h2>Execução sob medida para operação séria</h2>
+        </div>
+
+        <div class="diff-grid">
+          <article class="diff-card" data-reveal>
+            <i class="fa-solid fa-sitemap"></i>
+            <h3>Arquitetura orientada à operação</h3>
+            <p>Design de software pensado para uso diário real: clareza de fluxo, manutenção e continuidade.</p>
+          </article>
+
+          <article class="diff-card" data-reveal>
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>Segurança e governança</h3>
+            <p>Controles de permissão, medidas anti-abuso e decisões de produto com responsabilidade técnica.</p>
+          </article>
+
+          <article class="diff-card" data-reveal>
+            <i class="fa-solid fa-chart-column"></i>
+            <h3>Métricas para decidir rápido</h3>
+            <p>Dashboards e relatórios para acompanhar conversão, produtividade e pontos de gargalo.</p>
+          </article>
+        </div>
+
+        <div class="stack-block" data-reveal>
+          <p>Stack recorrente</p>
+          <ul>
+            <li>Node.js</li>
+            <li>Electron</li>
+            <li>Next.js</li>
+            <li>Prisma</li>
+            <li>PostgreSQL</li>
+            <li>Automação WhatsApp</li>
+            <li>Integrações API</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="apoie" class="section support section-anchor" data-pix-key="irving@ruas.dev.br">
+      <div class="container">
+        <div class="support-card" data-reveal>
+          <div class="support-copy">
+            <p class="eyebrow">Parcerias e apoio</p>
+            <h2>Se fizer sentido para ambos os lados, construímos juntos a próxima vantagem da sua operação</h2>
+            <p>
+              Atuo com agenda limitada para manter profundidade técnica e alto padrão de entrega.
+              Novos projetos passam por curadoria de escopo e prioridade. Apoios via GitHub Sponsors e Pix
+              fortalecem a evolução contínua dos produtos open source.
+            </p>
+            <ul class="support-limits">
+              <li><i class="fa-solid fa-circle-check"></i> Até 2 novos projetos por ciclo</li>
+              <li><i class="fa-solid fa-circle-check"></i> Diagnóstico técnico antes de proposta comercial</li>
+              <li><i class="fa-solid fa-circle-check"></i> Foco em impacto operacional mensurável</li>
+            </ul>
+          </div>
+
+          <div class="support-actions">
+            <a href="mailto:irving@ruas.dev.br?subject=Aplicacao%20Parceria%20Premium%20-%20Ruas.dev" class="btn btn-primary">
+              <i class="fa-solid fa-comments"></i>
+              Aplicar para parceria
+            </a>
+            <a href="https://github.com/sponsors/N1ghthill" target="_blank" rel="noopener" class="btn btn-secondary">
+              <i class="fa-brands fa-github"></i>
+              Doar no GitHub Sponsors
+            </a>
+            <button type="button" class="btn btn-secondary support-pix-btn">
+              <i class="fa-solid fa-qrcode"></i>
+              Doar via Pix
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section contact section-anchor">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Aplicação e contato</p>
+          <h2>Canais para projetos, parcerias e oportunidades estratégicas</h2>
+        </div>
+
+        <div class="contact-grid">
+          <a class="contact-card" data-reveal href="mailto:irving@ruas.dev.br">
+            <i class="fa-solid fa-envelope"></i>
+            <h3>E-mail</h3>
+            <p>irving@ruas.dev.br</p>
+            <span>Resposta rápida para propostas e parcerias.</span>
+          </a>
+
+          <a class="contact-card" data-reveal href="https://github.com/N1ghthill" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github"></i>
+            <h3>GitHub</h3>
+            <p>github.com/N1ghthill</p>
+            <span>Código, releases e projetos públicos.</span>
+          </a>
+
+          <a class="contact-card" data-reveal href="https://www.linkedin.com/in/irvingruas/" target="_blank" rel="noopener">
+            <i class="fa-brands fa-linkedin"></i>
+            <h3>LinkedIn</h3>
+            <p>irvingruas</p>
+            <span>Rede profissional para networking e oportunidades.</span>
+          </a>
+
+          <a class="contact-card" data-reveal href="https://www.instagram.com/irving.ruas/" target="_blank" rel="noopener">
+            <i class="fa-brands fa-instagram"></i>
+            <h3>Instagram</h3>
+            <p>@irving.ruas</p>
+            <span>Bastidores de produto e rotina de desenvolvimento.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <img src="assets/img/Ruas.dev/ruas_logo.png" alt="Ruas.dev" class="footer-logo" loading="lazy" decoding="async">
+        <p>Software e automação para negócios que precisam crescer com operação organizada.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#softwares">Softwares</a>
+        <a href="#apoie">Apoie</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; <span id="current-year">2026</span> Irving Ruas.</p>
+        <p>Licenciado sob MIT.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="support-modal" aria-hidden="true">
+    <div class="support-modal-backdrop"></div>
+    <div class="support-modal-content" role="dialog" aria-modal="true" aria-label="Doação via Pix">
+      <button type="button" class="support-modal-close" aria-label="Fechar modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="support-modal-body">
+        <h3>Doação via Pix</h3>
+        <p>Use a chave abaixo para apoiar os projetos.</p>
+
+        <div class="support-pix-box">
+          <span>Chave Pix</span>
+          <code data-pix-key-text></code>
+        </div>
+
+        <div class="support-modal-actions">
+          <button type="button" class="btn btn-primary support-copy-btn">
+            <i class="fa-regular fa-copy"></i>
+            Copiar chave
+          </button>
+          <a href="https://github.com/sponsors/N1ghthill" target="_blank" rel="noopener" class="btn btn-secondary">
+            <i class="fa-brands fa-github"></i>
+            Abrir GitHub Sponsors
+          </a>
+        </div>
+
+        <p class="support-copy-feedback" aria-live="polite"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

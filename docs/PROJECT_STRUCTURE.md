@@ -1,22 +1,24 @@
 # Estrutura do projeto
 
-```
+```text
 .
-├── index.html            # Página principal do portfólio
-├── assets/               # Estáticos do site
-│   ├── css/              # Estilos globais e responsivos
-│   ├── js/               # Scripts do front-end
-│   └── img/              # Imagens e previews
-├── scripts/              # Scripts auxiliares (Python)
-├── docs/                 # Documentação do projeto
-├── robots.txt            # Indexação para buscadores
-├── sitemap.xml           # Sitemap do domínio
-├── LICENSE               # Licença MIT
-├── README.md             # Resumo do projeto
-└── requirements.txt      # Dependências do script Python
+├── index.html                 # Página principal do portfólio
+├── assets/                    # Arquivos estáticos
+│   ├── css/                   # Estilos globais e responsivos
+│   ├── js/                    # Scripts de interação do front-end
+│   └── img/                   # Branding, screenshots e favicon
+├── scripts/                   # Script Python auxiliar (campanhas)
+├── docs/                      # Documentação técnica/operacional
+├── robots.txt                 # Regras para crawlers
+├── sitemap.xml                # Sitemap do domínio
+├── vercel.json                # Configuração de deploy e headers (Vercel)
+├── requirements.txt           # Dependências do script Python
+├── README.md                  # Visão geral do repositório
+└── LICENSE                    # Licença MIT
 ```
 
 ## Convenções
-- `assets/` guarda tudo que é carregado pelo navegador.
-- `scripts/` contém scripts que podem ser apresentados como projetos complementares.
-- `docs/` mantém a documentação organizada e fácil de consultar.
+- `assets/` contém somente recursos usados no front-end.
+- `docs/` concentra guias para manutenção, deploy e handoff.
+- `scripts/` abriga utilitários que complementam o portfólio técnico.
+- `.vercel/` é local e não deve ser versionado.
