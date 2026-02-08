@@ -6,13 +6,13 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ruas.dev.br/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ruas.dev.br/en" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruas.dev.br/en/" />
   </url>
   <url>
-    <loc>https://ruas.dev.br/en</loc>
+    <loc>https://ruas.dev.br/en/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ruas.dev.br/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ruas.dev.br/en" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruas.dev.br/en/" />
   </url>
 </urlset>

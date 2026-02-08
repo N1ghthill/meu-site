@@ -5,7 +5,48 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuIcon = menuButton ? menuButton.querySelector('i') : null;
   const navLinksContainer = document.querySelector('.nav-links');
   const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
+  const langLinks = Array.from(document.querySelectorAll('.lang-link'));
   const sections = Array.from(document.querySelectorAll('.section-anchor'));
+  const sectionByLocale = {
+    inicio: 'home',
+    softwares: 'software',
+    diferenciais: 'advantages',
+    apoie: 'support',
+    contato: 'contact',
+    home: 'inicio',
+    software: 'softwares',
+    advantages: 'diferenciais',
+    support: 'apoie',
+    contact: 'contato',
+  };
+
+  function getCurrentSectionId() {
+    const hash = window.location.hash.replace('#', '').trim();
+    if (hash) {
+      return hash.toLowerCase();
+    }
+
+    const activeLink = navLinks.find((link) => link.classList.contains('is-active'));
+    if (activeLink) {
+      const activeHref = activeLink.getAttribute('href') || '';
+      if (activeHref.startsWith('#')) {
+        return activeHref.slice(1).toLowerCase();
+      }
+    }
+
+    const firstSection = sections[0];
+    return firstSection ? firstSection.id.toLowerCase() : '';
+  }
+
+  function mapSectionId(sectionId, targetIsEnglish) {
+    if (!sectionId) {
+      return '';
+    }
+    if (targetIsEnglish === isEnglish) {
+      return sectionId;
+    }
+    return sectionByLocale[sectionId] || sectionId;
+  }
 
   function closeMenu() {
     if (!navLinksContainer || !menuButton || !menuIcon) {
@@ -44,6 +85,29 @@ document.addEventListener('DOMContentLoaded', () => {
       const top = target.getBoundingClientRect().top + window.scrollY - headerHeight;
       window.scrollTo({ top, behavior: 'smooth' });
       closeMenu();
+    });
+  });
+
+  langLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const href = link.getAttribute('href');
+      if (!href) {
+        return;
+      }
+
+      const targetLang = (link.getAttribute('hreflang') || '').toLowerCase();
+      const targetIsEnglish = targetLang.startsWith('en');
+      const currentSection = getCurrentSectionId();
+      const mappedSection = mapSectionId(currentSection, targetIsEnglish);
+
+      if (!mappedSection || targetIsEnglish === isEnglish) {
+        return;
+      }
+
+      event.preventDefault();
+      const destination = new URL(href, window.location.origin);
+      destination.hash = mappedSection;
+      window.location.assign(destination.toString());
     });
   });
 
