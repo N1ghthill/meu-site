@@ -666,9 +666,13 @@ a {
 
 .software-main-shot {
   width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
   border-radius: 16px;
   border: 1px solid var(--border);
   box-shadow: 0 14px 30px rgba(20, 38, 74, 0.14);
+  background: #f5f8ff;
 }
 
 .software-thumbs {
@@ -679,8 +683,12 @@ a {
 
 .software-thumbs img {
   width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
   border-radius: 12px;
   border: 1px solid var(--border);
+  background: #f5f8ff;
 }
 
 .software-actions {
