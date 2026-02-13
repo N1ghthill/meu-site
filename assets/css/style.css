@@ -482,21 +482,8 @@ a {
   padding: 1.3rem;
 }
 
-.hero-panel-logo {
-  border-radius: 18px;
-  border: 1px solid #c7d9ff;
-  background: #ffffff;
-  padding: 1.2rem 1rem;
-  display: grid;
-  place-items: center;
-}
-
-.hero-panel-logo img {
-  width: min(100%, 330px);
-}
-
 .hero-stats {
-  margin-top: 0.95rem;
+  margin-top: 0;
   display: grid;
   gap: 0.75rem;
 }
@@ -1066,8 +1053,10 @@ html[lang="en"] .contact-card span {
 }
 
 .footer-logo {
-  width: 190px;
-  margin-bottom: 0.4rem;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin-bottom: 0.55rem;
 }
 
 .footer-inner p {
