@@ -164,10 +164,13 @@ a {
   box-shadow: 0 0 0 6px rgba(31, 214, 104, 0.18);
 }
 
-.wordmark {
-  width: min(100%, 360px);
-  height: auto;
-  margin: 1rem 0 0.15rem;
+.brand-name {
+  margin: 0.9rem 0 0;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #a4c5ff;
 }
 
 h1,
@@ -310,6 +313,21 @@ h2 {
   background: linear-gradient(140deg, rgba(28, 60, 122, 0.6), rgba(12, 29, 63, 0.78));
 }
 
+.link-card-whatsapp {
+  border-color: rgba(77, 223, 143, 0.38);
+  background: linear-gradient(140deg, rgba(18, 94, 62, 0.6), rgba(9, 56, 42, 0.78));
+}
+
+.link-card-whatsapp:hover {
+  border-color: rgba(117, 241, 174, 0.56);
+  background: linear-gradient(140deg, rgba(23, 118, 78, 0.62), rgba(11, 68, 49, 0.8));
+}
+
+.link-card-whatsapp .link-icon {
+  border-color: rgba(165, 244, 201, 0.5);
+  background: linear-gradient(140deg, rgba(41, 173, 106, 0.95), rgba(26, 133, 80, 0.9));
+}
+
 .link-icon {
   width: 40px;
   height: 40px;
@@ -378,14 +396,6 @@ h2 {
 
 .project-title h3 {
   font-size: 1.02rem;
-}
-
-.project-title img {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.8);
-  object-fit: contain;
 }
 
 .project-body p {
