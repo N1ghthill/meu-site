@@ -160,6 +160,424 @@ document.addEventListener('DOMContentLoaded', () => {
     revealObserver.observe(element);
   });
 
+  const softwareMediaBlocks = Array.from(document.querySelectorAll('.software-media'));
+
+  function normalizeAssetPath(src) {
+    if (!src) {
+      return '';
+    }
+    try {
+      return new URL(src, window.location.href).pathname;
+    } catch {
+      return src;
+    }
+  }
+
+  function isActionKey(event) {
+    return event.key === 'Enter' || event.key === ' ';
+  }
+
+  function collectGalleryItems(media) {
+    const mainShot = media.querySelector('.software-main-shot');
+    const thumbs = Array.from(media.querySelectorAll('.software-thumbs img'));
+    const items = [];
+    const seen = new Set();
+
+    function appendItem(img, fallbackAlt = '') {
+      if (!img) {
+        return;
+      }
+      const src = img.getAttribute('src');
+      if (!src) {
+        return;
+      }
+      const normalized = normalizeAssetPath(src);
+      if (seen.has(normalized)) {
+        return;
+      }
+      seen.add(normalized);
+      items.push({
+        src,
+        alt: img.getAttribute('alt') || fallbackAlt,
+      });
+    }
+
+    appendItem(mainShot);
+    thumbs.forEach((thumb) => appendItem(thumb, mainShot ? (mainShot.getAttribute('alt') || '') : ''));
+    return items;
+  }
+
+  softwareMediaBlocks.forEach((media, mediaIndex) => {
+    const mainShot = media.querySelector('.software-main-shot');
+    const thumbsContainer = media.querySelector('.software-thumbs');
+    if (!mainShot || !thumbsContainer) {
+      return;
+    }
+
+    let thumbs = Array.from(thumbsContainer.querySelectorAll('img'));
+    if (!thumbs.length) {
+      return;
+    }
+
+    const defaultMainSrc = mainShot.getAttribute('src') || '';
+    const defaultMainAlt = mainShot.getAttribute('alt') || '';
+    const mainSrcPath = normalizeAssetPath(defaultMainSrc);
+    const hasCurrentMainAsThumb = thumbs.some((thumb) => normalizeAssetPath(thumb.getAttribute('src')) === mainSrcPath);
+
+    function setThumbState(activeThumb) {
+      thumbs.forEach((thumb, thumbIndex) => {
+        const isActive = thumb === activeThumb;
+        thumb.classList.toggle('is-active', isActive);
+        thumb.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        const tabIndex = activeThumb ? (isActive ? '0' : '-1') : (thumbIndex === 0 ? '0' : '-1');
+        thumb.setAttribute('tabindex', tabIndex);
+        thumb.setAttribute(
+          'aria-label',
+          isEnglish
+            ? `View screenshot ${thumbIndex + 1}`
+            : `Ver screenshot ${thumbIndex + 1}`
+        );
+      });
+    }
+
+    function swapMainImage(targetThumb) {
+      const nextSrc = targetThumb.getAttribute('src');
+      if (!nextSrc) {
+        return;
+      }
+
+      const nextAlt = targetThumb.getAttribute('alt') || mainShot.getAttribute('alt') || '';
+      const currentPath = normalizeAssetPath(mainShot.getAttribute('src'));
+      const nextPath = normalizeAssetPath(nextSrc);
+      const isTargetActive = targetThumb.classList.contains('is-active');
+
+      if (isTargetActive && normalizeAssetPath(defaultMainSrc) !== currentPath) {
+        mainShot.classList.add('is-switching');
+        mainShot.setAttribute('src', defaultMainSrc);
+        mainShot.setAttribute('alt', defaultMainAlt);
+        setThumbState(null);
+        requestAnimationFrame(() => {
+          mainShot.classList.remove('is-switching');
+        });
+        return;
+      }
+
+      if (currentPath === nextPath && mainShot.getAttribute('alt') === nextAlt) {
+        setThumbState(targetThumb);
+        return;
+      }
+
+      mainShot.classList.add('is-switching');
+
+      const preload = new Image();
+      preload.decoding = 'async';
+      preload.src = nextSrc;
+
+      const commit = () => {
+        mainShot.setAttribute('src', nextSrc);
+        mainShot.setAttribute('alt', nextAlt);
+        setThumbState(targetThumb);
+        requestAnimationFrame(() => {
+          mainShot.classList.remove('is-switching');
+        });
+      };
+
+      if (preload.complete) {
+        commit();
+        return;
+      }
+
+      preload.addEventListener('load', commit, { once: true });
+      preload.addEventListener('error', commit, { once: true });
+    }
+
+    thumbs.forEach((thumb) => {
+      thumb.setAttribute('role', 'button');
+      thumb.setAttribute('aria-controls', `software-main-shot-${mediaIndex + 1}`);
+
+      thumb.addEventListener('click', () => {
+        swapMainImage(thumb);
+      });
+
+      thumb.addEventListener('keydown', (event) => {
+        if (isActionKey(event)) {
+          event.preventDefault();
+          swapMainImage(thumb);
+          return;
+        }
+
+        const currentIndex = thumbs.indexOf(thumb);
+        if (currentIndex === -1) {
+          return;
+        }
+
+        let nextIndex = -1;
+        if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+          nextIndex = (currentIndex + 1) % thumbs.length;
+        } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+          nextIndex = (currentIndex - 1 + thumbs.length) % thumbs.length;
+        } else if (event.key === 'Home') {
+          nextIndex = 0;
+        } else if (event.key === 'End') {
+          nextIndex = thumbs.length - 1;
+        }
+
+        if (nextIndex >= 0) {
+          event.preventDefault();
+          const nextThumb = thumbs[nextIndex];
+          swapMainImage(nextThumb);
+          nextThumb.focus();
+        }
+      });
+    });
+
+    mainShot.setAttribute('id', `software-main-shot-${mediaIndex + 1}`);
+    const initialActiveThumb = hasCurrentMainAsThumb
+      ? (thumbs.find((thumb) => normalizeAssetPath(thumb.getAttribute('src')) === mainSrcPath) || null)
+      : null;
+    setThumbState(initialActiveThumb);
+
+    mainShot.setAttribute('role', 'button');
+    mainShot.setAttribute('tabindex', '0');
+    mainShot.setAttribute(
+      'aria-label',
+      isEnglish ? 'Open screenshot preview' : 'Abrir visualizacao da screenshot'
+    );
+
+    mainShot.addEventListener('click', () => {
+      openLightbox(media, mainShot.getAttribute('src') || defaultMainSrc, mainShot);
+    });
+
+    mainShot.addEventListener('keydown', (event) => {
+      if (!isActionKey(event)) {
+        return;
+      }
+      event.preventDefault();
+      openLightbox(media, mainShot.getAttribute('src') || defaultMainSrc, mainShot);
+    });
+  });
+
+  const lightbox = document.createElement('div');
+  lightbox.className = 'shot-lightbox';
+  lightbox.setAttribute('aria-hidden', 'true');
+  lightbox.innerHTML = `
+    <div class="shot-lightbox-backdrop" data-lightbox-close></div>
+    <div class="shot-lightbox-dialog" role="dialog" aria-modal="true" aria-label="${isEnglish ? 'Software screenshot preview' : 'Visualizacao de screenshot'}">
+      <button type="button" class="shot-lightbox-close" aria-label="${isEnglish ? 'Close preview' : 'Fechar visualizacao'}">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <button type="button" class="shot-lightbox-nav shot-lightbox-prev" aria-label="${isEnglish ? 'Previous screenshot' : 'Screenshot anterior'}">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <img class="shot-lightbox-image" src="" alt="">
+      <button type="button" class="shot-lightbox-nav shot-lightbox-next" aria-label="${isEnglish ? 'Next screenshot' : 'Proxima screenshot'}">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+      <p class="shot-lightbox-caption"></p>
+    </div>
+  `;
+  body.appendChild(lightbox);
+
+  const lightboxBackdrop = lightbox.querySelector('.shot-lightbox-backdrop');
+  const lightboxClose = lightbox.querySelector('.shot-lightbox-close');
+  const lightboxPrev = lightbox.querySelector('.shot-lightbox-prev');
+  const lightboxNext = lightbox.querySelector('.shot-lightbox-next');
+  const lightboxImage = lightbox.querySelector('.shot-lightbox-image');
+  const lightboxCaption = lightbox.querySelector('.shot-lightbox-caption');
+
+  let lightboxItems = [];
+  let lightboxIndex = 0;
+  let lightboxTrigger = null;
+  let swipeTracking = false;
+  let swipeStartX = 0;
+  let swipeStartY = 0;
+  let swipePointerId = null;
+  const swipeThreshold = 52;
+  const swipeAxisRatio = 1.25;
+
+  function isLightboxOpen() {
+    return lightbox.classList.contains('open');
+  }
+
+  function syncBodyOverflow() {
+    const supportOpen = Boolean(modal && modal.classList.contains('open'));
+    body.style.overflow = supportOpen || isLightboxOpen() ? 'hidden' : '';
+  }
+
+  function renderLightbox() {
+    if (!lightboxImage || !lightboxItems.length) {
+      return;
+    }
+    const item = lightboxItems[lightboxIndex];
+    const hasMultiple = lightboxItems.length > 1;
+    lightboxImage.setAttribute('src', item.src);
+    lightboxImage.setAttribute('alt', item.alt || '');
+    if (lightboxCaption) {
+      lightboxCaption.textContent = item.alt || '';
+    }
+    if (lightboxPrev) {
+      lightboxPrev.disabled = !hasMultiple;
+    }
+    if (lightboxNext) {
+      lightboxNext.disabled = !hasMultiple;
+    }
+  }
+
+  function showPrevLightboxImage() {
+    if (lightboxItems.length < 2) {
+      return;
+    }
+    lightboxIndex = (lightboxIndex - 1 + lightboxItems.length) % lightboxItems.length;
+    renderLightbox();
+  }
+
+  function showNextLightboxImage() {
+    if (lightboxItems.length < 2) {
+      return;
+    }
+    lightboxIndex = (lightboxIndex + 1) % lightboxItems.length;
+    renderLightbox();
+  }
+
+  function resetSwipe() {
+    swipeTracking = false;
+    swipePointerId = null;
+    swipeStartX = 0;
+    swipeStartY = 0;
+  }
+
+  function startSwipe(x, y, pointerId = null) {
+    if (!isLightboxOpen() || lightboxItems.length < 2) {
+      resetSwipe();
+      return;
+    }
+    swipeTracking = true;
+    swipeStartX = x;
+    swipeStartY = y;
+    swipePointerId = pointerId;
+  }
+
+  function endSwipe(x, y, pointerId = null) {
+    if (!swipeTracking) {
+      return;
+    }
+    if (swipePointerId !== null && pointerId !== null && swipePointerId !== pointerId) {
+      return;
+    }
+
+    const deltaX = x - swipeStartX;
+    const deltaY = y - swipeStartY;
+    const absX = Math.abs(deltaX);
+    const absY = Math.abs(deltaY);
+
+    if (absX >= swipeThreshold && absX > absY * swipeAxisRatio) {
+      if (deltaX > 0) {
+        showPrevLightboxImage();
+      } else {
+        showNextLightboxImage();
+      }
+    }
+
+    resetSwipe();
+  }
+
+  function closeLightbox() {
+    if (!isLightboxOpen()) {
+      return false;
+    }
+    resetSwipe();
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    syncBodyOverflow();
+    if (lightboxTrigger && typeof lightboxTrigger.focus === 'function') {
+      lightboxTrigger.focus();
+    }
+    return true;
+  }
+
+  function openLightbox(media, preferredSrc, trigger) {
+    lightboxItems = collectGalleryItems(media);
+    if (!lightboxItems.length || !lightboxImage) {
+      return;
+    }
+
+    const preferredPath = normalizeAssetPath(preferredSrc);
+    const matchedIndex = lightboxItems.findIndex((item) => normalizeAssetPath(item.src) === preferredPath);
+    lightboxIndex = matchedIndex >= 0 ? matchedIndex : 0;
+    lightboxTrigger = trigger || null;
+
+    renderLightbox();
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    syncBodyOverflow();
+  }
+
+  if (lightboxBackdrop) {
+    lightboxBackdrop.addEventListener('click', closeLightbox);
+  }
+
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+  }
+
+  if (lightboxPrev) {
+    lightboxPrev.addEventListener('click', showPrevLightboxImage);
+  }
+
+  if (lightboxNext) {
+    lightboxNext.addEventListener('click', showNextLightboxImage);
+  }
+
+  if (lightboxImage) {
+    lightboxImage.setAttribute('draggable', 'false');
+
+    if (window.PointerEvent) {
+      lightboxImage.addEventListener('pointerdown', (event) => {
+        if (event.pointerType !== 'touch') {
+          return;
+        }
+        event.preventDefault();
+        startSwipe(event.clientX, event.clientY, event.pointerId);
+      });
+
+      lightboxImage.addEventListener('pointerup', (event) => {
+        if (event.pointerType !== 'touch') {
+          return;
+        }
+        endSwipe(event.clientX, event.clientY, event.pointerId);
+      });
+
+      lightboxImage.addEventListener('pointercancel', resetSwipe);
+    } else {
+      lightboxImage.addEventListener(
+        'touchstart',
+        (event) => {
+          const touch = event.changedTouches[0];
+          if (!touch) {
+            return;
+          }
+          startSwipe(touch.clientX, touch.clientY, touch.identifier);
+        },
+        { passive: true }
+      );
+
+      lightboxImage.addEventListener(
+        'touchend',
+        (event) => {
+          const touch = event.changedTouches[0];
+          if (!touch) {
+            resetSwipe();
+            return;
+          }
+          endSwipe(touch.clientX, touch.clientY, touch.identifier);
+        },
+        { passive: true }
+      );
+
+      lightboxImage.addEventListener('touchcancel', resetSwipe, { passive: true });
+    }
+  }
+
   const yearElement = document.getElementById('current-year');
   if (yearElement) {
     yearElement.textContent = String(new Date().getFullYear());
@@ -190,7 +608,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
-    body.style.overflow = 'hidden';
+    syncBodyOverflow();
     if (copyFeedback) {
       copyFeedback.textContent = '';
     }
@@ -202,7 +620,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     modal.classList.remove('open');
     modal.setAttribute('aria-hidden', 'true');
-    body.style.overflow = '';
+    syncBodyOverflow();
   }
 
   async function copyPixKey() {
@@ -258,7 +676,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
+      if (closeLightbox()) {
+        event.preventDefault();
+        return;
+      }
       closeModal();
+      return;
+    }
+
+    if (!isLightboxOpen()) {
+      return;
+    }
+
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      showPrevLightboxImage();
+      return;
+    }
+
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      showNextLightboxImage();
     }
   });
 });

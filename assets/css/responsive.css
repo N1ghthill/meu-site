@@ -108,6 +108,10 @@
     padding-top: 3.8rem;
   }
 
+  .hero-copy h1 {
+    font-family: "Manrope", "Segoe UI", sans-serif;
+  }
+
   .signal-strip {
     flex-direction: column;
     align-items: flex-start;
@@ -144,6 +148,19 @@
 
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+
+  .shot-lightbox-dialog {
+    margin-top: 6vh;
+    padding: 0.72rem;
+  }
+
+  .shot-lightbox-prev {
+    left: 0.8rem;
+  }
+
+  .shot-lightbox-next {
+    right: 0.8rem;
   }
 }
 
@@ -216,11 +233,31 @@
   .support-modal-body {
     padding: 1rem;
   }
+
+  .shot-lightbox-close,
+  .shot-lightbox-nav {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+
+  .shot-lightbox-prev {
+    left: 0.55rem;
+  }
+
+  .shot-lightbox-next {
+    right: 0.55rem;
+  }
+
+  .shot-lightbox-close {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
 }
 
 @media (max-width: 520px) {
-  .brand-text {
-    display: none;
+  .brand-logo {
+    width: min(136px, 38vw);
   }
 
   .nav {
