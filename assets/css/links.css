@@ -132,15 +132,12 @@ a {
 
 .avatar {
   width: 72px;
-  aspect-ratio: 1;
+  height: auto;
   border-radius: 18px;
-  border: 1px solid rgba(188, 220, 255, 0.78);
-  background: linear-gradient(145deg, rgba(246, 251, 255, 0.92), rgba(213, 230, 255, 0.86));
-  box-shadow:
-    0 0 0 4px rgba(84, 145, 255, 0.24),
-    0 14px 30px rgba(0, 0, 0, 0.36);
-  filter: brightness(1.08) contrast(1.08);
-  padding: 0.28rem;
+  border: 1px solid rgba(151, 192, 255, 0.5);
+  background: rgba(11, 28, 61, 0.62);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+  padding: 0.24rem;
 }
 
 .status {
@@ -174,8 +171,7 @@ a {
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #d3e7ff;
-  text-shadow: 0 0 18px rgba(64, 139, 255, 0.35);
+  color: #a4c5ff;
 }
 
 h1,
