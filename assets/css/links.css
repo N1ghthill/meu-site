@@ -134,9 +134,13 @@ a {
   width: 72px;
   aspect-ratio: 1;
   border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.06);
-  padding: 0.25rem;
+  border: 1px solid rgba(188, 220, 255, 0.78);
+  background: linear-gradient(145deg, rgba(246, 251, 255, 0.92), rgba(213, 230, 255, 0.86));
+  box-shadow:
+    0 0 0 4px rgba(84, 145, 255, 0.24),
+    0 14px 30px rgba(0, 0, 0, 0.36);
+  filter: brightness(1.08) contrast(1.08);
+  padding: 0.28rem;
 }
 
 .status {
@@ -170,7 +174,8 @@ a {
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #a4c5ff;
+  color: #d3e7ff;
+  text-shadow: 0 0 18px rgba(64, 139, 255, 0.35);
 }
 
 h1,
