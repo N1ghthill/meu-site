@@ -570,6 +570,12 @@ a {
   border-color: #bad0ff;
 }
 
+.software-card-terminuz {
+  background:
+    linear-gradient(140deg, rgba(255, 255, 255, 0.97), rgba(238, 233, 255, 0.95));
+  border-color: #c9b8ff;
+}
+
 .software-header {
   display: flex;
   align-items: flex-start;
