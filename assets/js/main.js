@@ -187,6 +187,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!img) {
         return;
       }
+      if (img.closest('[data-media-type="video"]')) {
+        return;
+      }
       const src = img.getAttribute('src');
       if (!src) {
         return;
@@ -209,13 +212,210 @@ document.addEventListener('DOMContentLoaded', () => {
 
   softwareMediaBlocks.forEach((media, mediaIndex) => {
     const mainShot = media.querySelector('.software-main-shot');
+    const videoFrame = media.querySelector('.software-video');
     const thumbsContainer = media.querySelector('.software-thumbs');
-    if (!mainShot || !thumbsContainer) {
+    if ((!mainShot && !videoFrame) || !thumbsContainer) {
       return;
     }
 
-    let thumbs = Array.from(thumbsContainer.querySelectorAll('img'));
+    let thumbs = Array.from(thumbsContainer.children).filter((thumb) => thumb.matches('img, button'));
     if (!thumbs.length) {
+      return;
+    }
+
+    if (!mainShot && videoFrame) {
+      const frameId = `software-main-shot-${mediaIndex + 1}`;
+      const defaultVideoHtml = videoFrame.innerHTML;
+      const defaultVideoLabel = videoFrame.getAttribute('aria-label') || '';
+      const videoTitle = videoFrame.dataset.videoTitle || defaultVideoLabel;
+      const videoSrc = videoFrame.dataset.videoSrc || '';
+      const videoThumb = thumbs.find((thumb) => thumb.dataset.mediaType === 'video') || null;
+
+      function getThumbImage(thumb) {
+        return thumb.matches('img') ? thumb : thumb.querySelector('img');
+      }
+
+      function getThumbSrc(thumb) {
+        const thumbImage = getThumbImage(thumb);
+        return thumbImage ? thumbImage.getAttribute('src') : '';
+      }
+
+      function getThumbAlt(thumb) {
+        const thumbImage = getThumbImage(thumb);
+        return thumbImage ? (thumbImage.getAttribute('alt') || '') : '';
+      }
+
+      function setThumbState(activeThumb) {
+        let screenshotIndex = 0;
+        thumbs.forEach((thumb, thumbIndex) => {
+          const isActive = thumb === activeThumb;
+          const isVideoThumb = thumb.dataset.mediaType === 'video';
+          if (!isVideoThumb) {
+            screenshotIndex += 1;
+          }
+          thumb.classList.toggle('is-active', isActive);
+          thumb.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          thumb.setAttribute('tabindex', activeThumb ? (isActive ? '0' : '-1') : (thumbIndex === 0 ? '0' : '-1'));
+          thumb.setAttribute(
+            'aria-label',
+            isVideoThumb
+              ? (isEnglish ? 'View video demo' : 'Ver demo em vídeo')
+              : (isEnglish ? `View screenshot ${screenshotIndex}` : `Ver screenshot ${screenshotIndex}`)
+          );
+        });
+      }
+
+      function loadVideoFrame() {
+        if (!videoSrc) {
+          return;
+        }
+        videoFrame.classList.add('is-switching');
+        videoFrame.innerHTML = `
+          <iframe
+            src="${videoSrc}"
+            title="${videoTitle}"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        `;
+        videoFrame.setAttribute('aria-label', defaultVideoLabel);
+        setThumbState(videoThumb);
+        requestAnimationFrame(() => {
+          videoFrame.classList.remove('is-switching');
+        });
+      }
+
+      function bindVideoPoster() {
+        const posterButton = videoFrame.querySelector('.software-video-poster');
+        if (!posterButton) {
+          return;
+        }
+        posterButton.addEventListener('click', loadVideoFrame);
+      }
+
+      function restoreVideoFrame() {
+        videoFrame.classList.add('is-switching');
+        videoFrame.innerHTML = defaultVideoHtml;
+        videoFrame.setAttribute('aria-label', defaultVideoLabel);
+        videoFrame.removeAttribute('role');
+        videoFrame.removeAttribute('tabindex');
+        bindVideoPoster();
+        setThumbState(videoThumb);
+        requestAnimationFrame(() => {
+          videoFrame.classList.remove('is-switching');
+        });
+      }
+
+      function showScreenshotInFrame(targetThumb) {
+        if (targetThumb.dataset.mediaType === 'video') {
+          restoreVideoFrame();
+          return;
+        }
+
+        const nextSrc = getThumbSrc(targetThumb);
+        if (!nextSrc) {
+          return;
+        }
+
+        const nextAlt = getThumbAlt(targetThumb);
+        videoFrame.classList.add('is-switching');
+
+        const preload = new Image();
+        preload.decoding = 'async';
+        preload.src = nextSrc;
+
+        const commit = () => {
+          const preview = document.createElement('img');
+          preview.className = 'software-video-shot';
+          preview.src = nextSrc;
+          preview.alt = nextAlt;
+          preview.width = 1920;
+          preview.height = 1080;
+          preview.decoding = 'async';
+          preview.setAttribute('role', 'button');
+          preview.setAttribute('tabindex', '0');
+          preview.setAttribute(
+            'aria-label',
+            isEnglish ? 'Open screenshot preview' : 'Abrir visualizacao da screenshot'
+          );
+
+          preview.addEventListener('click', () => {
+            openLightbox(media, nextSrc, preview);
+          });
+
+          preview.addEventListener('keydown', (event) => {
+            if (!isActionKey(event)) {
+              return;
+            }
+            event.preventDefault();
+            openLightbox(media, nextSrc, preview);
+          });
+
+          videoFrame.innerHTML = '';
+          videoFrame.appendChild(preview);
+          videoFrame.setAttribute('aria-label', nextAlt);
+          setThumbState(targetThumb);
+          requestAnimationFrame(() => {
+            videoFrame.classList.remove('is-switching');
+          });
+        };
+
+        if (preload.complete) {
+          commit();
+          return;
+        }
+
+        preload.addEventListener('load', commit, { once: true });
+        preload.addEventListener('error', commit, { once: true });
+      }
+
+      thumbs.forEach((thumb) => {
+        if (!thumb.matches('button')) {
+          thumb.setAttribute('role', 'button');
+        }
+        thumb.setAttribute('aria-controls', frameId);
+
+        thumb.addEventListener('click', () => {
+          showScreenshotInFrame(thumb);
+        });
+
+        thumb.addEventListener('keydown', (event) => {
+          if (isActionKey(event)) {
+            event.preventDefault();
+            showScreenshotInFrame(thumb);
+            return;
+          }
+
+          const currentIndex = thumbs.indexOf(thumb);
+          if (currentIndex === -1) {
+            return;
+          }
+
+          let nextIndex = -1;
+          if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+            nextIndex = (currentIndex + 1) % thumbs.length;
+          } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+            nextIndex = (currentIndex - 1 + thumbs.length) % thumbs.length;
+          } else if (event.key === 'Home') {
+            nextIndex = 0;
+          } else if (event.key === 'End') {
+            nextIndex = thumbs.length - 1;
+          }
+
+          if (nextIndex >= 0) {
+            event.preventDefault();
+            const nextThumb = thumbs[nextIndex];
+            showScreenshotInFrame(nextThumb);
+            nextThumb.focus();
+          }
+        });
+      });
+
+      videoFrame.setAttribute('id', frameId);
+      bindVideoPoster();
+      setThumbState(videoThumb);
       return;
     }
 

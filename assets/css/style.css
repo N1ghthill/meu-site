@@ -688,12 +688,15 @@ a {
 .software-thumbs {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
   gap: 0.45rem;
 }
 
-.software-thumbs img {
+.software-thumbs > img,
+.software-thumb {
   width: 100%;
   height: auto;
+  align-self: start;
   aspect-ratio: 16 / 9;
   object-fit: contain;
   border-radius: 12px;
@@ -703,22 +706,131 @@ a {
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.software-thumbs img:hover {
+.software-thumb {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  appearance: none;
+  line-height: 0;
+}
+
+.software-thumbs > img {
+  display: block;
+}
+
+.software-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.software-thumbs > img:hover,
+.software-thumb:hover {
   transform: translateY(-2px);
   border-color: #9ebdff;
   box-shadow: 0 10px 18px rgba(20, 38, 74, 0.14);
 }
 
-.software-thumbs img.is-active {
+.software-thumbs > img.is-active,
+.software-thumb.is-active {
   border-color: #5f89ff;
   box-shadow:
     0 0 0 2px rgba(31, 102, 255, 0.2),
     0 10px 18px rgba(20, 38, 74, 0.14);
 }
 
-.software-thumbs img:focus-visible {
+.software-thumbs > img:focus-visible,
+.software-thumb:focus-visible {
   outline: 3px solid var(--focus-ring);
   outline-offset: 2px;
+}
+
+.software-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: #0f172a;
+  box-shadow: 0 14px 30px rgba(20, 38, 74, 0.14);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.software-video iframe,
+.software-video-poster {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.software-video-poster {
+  position: relative;
+  padding: 0;
+  appearance: none;
+  cursor: pointer;
+  background: #0f172a;
+}
+
+.software-video-poster img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.software-play-badge,
+.software-thumb-play {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: rgba(10, 20, 44, 0.72);
+  backdrop-filter: blur(8px);
+}
+
+.software-play-badge {
+  left: 50%;
+  top: 50%;
+  width: 68px;
+  height: 68px;
+  border-radius: 999px;
+  font-size: 1.45rem;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 18px 34px rgba(8, 16, 32, 0.28);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.software-video-poster:hover .software-play-badge,
+.software-video-poster:focus-visible .software-play-badge {
+  background: rgba(31, 102, 255, 0.88);
+  transform: translate(-50%, -50%) scale(1.04);
+}
+
+.software-thumb-play {
+  right: 0.42rem;
+  bottom: 0.42rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+}
+
+.software-video.is-switching {
+  opacity: 0.68;
+  transform: scale(0.995);
+}
+
+.software-video-shot {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #f5f8ff;
+  cursor: zoom-in;
 }
 
 .software-actions {
