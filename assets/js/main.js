@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function collectGalleryItems(media) {
     const mainShot = media.querySelector('.software-main-shot');
-    const thumbs = Array.from(media.querySelectorAll('.software-thumbs img'));
+    const thumbs = Array.from(media.querySelectorAll('.software-thumbs > img, .software-thumb img'));
     const items = [];
     const seen = new Set();
 
