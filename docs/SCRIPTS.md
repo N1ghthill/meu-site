@@ -64,6 +64,26 @@ npx playwright install chromium
 npm run check:layout
 ```
 
+## `check:a11y`
+
+## PT-BR
+Auditoria automatizada de acessibilidade com axe-core para as páginas principais.
+
+- Sobe um servidor estático temporário
+- Abre `/`, `/en/` e `/links/` em mobile e desktop
+- Falha se detectar violações WCAG 2/2.1 A ou AA
+
+### Pré-requisitos
+```bash
+npm install
+npx playwright install chromium
+```
+
+### Executar
+```bash
+npm run check:a11y
+```
+
 ## EN
 Automated mobile/desktop layout check for the main pages.
 
@@ -80,4 +100,24 @@ npx playwright install chromium
 ### Run
 ```bash
 npm run check:layout
+```
+
+## `check:a11y`
+
+## EN
+Automated axe-core accessibility audit for the main pages.
+
+- Starts a temporary static server
+- Opens `/`, `/en/` and `/links/` on mobile and desktop
+- Fails on WCAG 2/2.1 A or AA violations
+
+### Requirements
+```bash
+npm install
+npx playwright install chromium
+```
+
+### Run
+```bash
+npm run check:a11y
 ```

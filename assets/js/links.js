@@ -3,6 +3,16 @@ if (year) {
   year.textContent = String(new Date().getFullYear());
 }
 
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(() => {
+    const firstIcon = document.querySelector(".link-icon i");
+    const iconContent = firstIcon ? window.getComputedStyle(firstIcon, "::before").content : "";
+    if (iconContent && iconContent !== "none" && iconContent !== '""') {
+      document.documentElement.classList.add("icons-loaded");
+    }
+  });
+}
+
 const revealItems = document.querySelectorAll(".reveal");
 if (revealItems.length > 0) {
   if (!("IntersectionObserver" in window)) {
@@ -22,7 +32,7 @@ if (revealItems.length > 0) {
         });
       },
       {
-        threshold: 0.16,
+        threshold: 0.05,
       }
     );
 

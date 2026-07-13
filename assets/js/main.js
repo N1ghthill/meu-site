@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
             screenshotIndex += 1;
           }
           thumb.classList.toggle('is-active', isActive);
-          thumb.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          thumb.setAttribute('aria-current', isActive ? 'true' : 'false');
           thumb.setAttribute('tabindex', activeThumb ? (isActive ? '0' : '-1') : (thumbIndex === 0 ? '0' : '-1'));
           thumb.setAttribute(
             'aria-label',
@@ -428,7 +428,7 @@ document.addEventListener('DOMContentLoaded', () => {
       thumbs.forEach((thumb, thumbIndex) => {
         const isActive = thumb === activeThumb;
         thumb.classList.toggle('is-active', isActive);
-        thumb.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        thumb.setAttribute('aria-current', isActive ? 'true' : 'false');
         const tabIndex = activeThumb ? (isActive ? '0' : '-1') : (thumbIndex === 0 ? '0' : '-1');
         thumb.setAttribute('tabindex', tabIndex);
         thumb.setAttribute(

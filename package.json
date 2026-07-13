@@ -2,9 +2,11 @@
   "name": "meu-site",
   "private": true,
   "scripts": {
-    "check:layout": "node scripts/check_layout.js"
+    "check:layout": "node scripts/check_layout.js",
+    "check:a11y": "node scripts/check_accessibility.js"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.11.0",
     "playwright": "^1.61.1"
   }
 }
