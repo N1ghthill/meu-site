@@ -1,0 +1,10 @@
+{
+  "name": "meu-site",
+  "private": true,
+  "scripts": {
+    "check:layout": "node scripts/check_layout.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.61.1"
+  }
+}

@@ -93,12 +93,9 @@
           </h1>
 
           <p>
-            I am Irving Ruas. I build sales and operations software with no improvisation: strong architecture,
-            real-world integration and outcome-driven delivery. My main project is
-            <strong>Terminuz</strong>, an open source coding agent for the terminal with multiple providers.
-            <strong>DevSynapse AI</strong> is my coding agent project for DeepSeek;
-            <strong>BotAssist WhatsApp</strong> is in production;
-            <strong>Nexo</strong> is the strategic multi-tenant CRM platform.
+            I am Irving Ruas. I build sales and operations software with strong architecture,
+            real-world integration and outcome-driven delivery. My products cover coding agents,
+            WhatsApp automation and multi-tenant CRM for commercial operations.
           </p>
 
           <div class="hero-actions">
@@ -596,7 +593,12 @@
   <!-- Vercel Speed Insights -->
   <script>
     window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    if (!["localhost", "127.0.0.1", ""].includes(window.location.hostname)) {
+      const speedInsightsScript = document.createElement("script");
+      speedInsightsScript.defer = true;
+      speedInsightsScript.src = "/_vercel/speed-insights/script.js";
+      document.head.appendChild(speedInsightsScript);
+    }
   </script>
-  <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>

@@ -337,9 +337,13 @@ h2 {
   place-items: center;
   color: #ebf3ff;
   font-weight: 800;
-  font-size: 0.76rem;
-  letter-spacing: 0.02em;
+  font-size: 1rem;
+  letter-spacing: 0;
   background: linear-gradient(140deg, rgba(35, 105, 228, 0.8), rgba(28, 71, 173, 0.7));
+}
+
+.link-icon i {
+  line-height: 1;
 }
 
 .link-copy {

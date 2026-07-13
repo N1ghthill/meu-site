@@ -93,12 +93,9 @@
           </h1>
 
           <p>
-            Sou Irving Ruas. Desenvolvo software para vendas e operação sem improviso: arquitetura sólida,
-            integração com contexto real e entrega orientada a resultado. Minha aplicação principal é o
-            <strong>Terminuz</strong>, um coding agent open source para o terminal com múltiplos provedores.
-            O <strong>DevSynapse AI</strong> é meu projeto de coding agent para DeepSeek; o
-            <strong>BotAssist WhatsApp</strong> opera em produção; o <strong>Nexo</strong> é a plataforma
-            estratégica para CRM multi-tenant.
+            Sou Irving Ruas. Desenvolvo software para vendas e operação com arquitetura sólida,
+            integração ao contexto real e entrega orientada a resultado. Meus produtos cobrem
+            coding agents, automação WhatsApp e CRM multi-tenant para operações comerciais.
           </p>
 
           <div class="hero-actions">
@@ -595,7 +592,12 @@
   <!-- Vercel Speed Insights -->
   <script>
     window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    if (!["localhost", "127.0.0.1", ""].includes(window.location.hostname)) {
+      const speedInsightsScript = document.createElement("script");
+      speedInsightsScript.defer = true;
+      speedInsightsScript.src = "/_vercel/speed-insights/script.js";
+      document.head.appendChild(speedInsightsScript);
+    }
   </script>
-  <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
