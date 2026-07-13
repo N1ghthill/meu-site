@@ -664,8 +664,7 @@ a {
 }
 
 .software-card-terminuz .software-media {
-  width: min(100%, 920px);
-  justify-self: center;
+  width: 100%;
 }
 
 .software-main-shot {
