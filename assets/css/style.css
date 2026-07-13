@@ -757,13 +757,19 @@ a {
 .software-video {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 16px;
   border: 1px solid var(--border);
   background: #0f172a;
   box-shadow: 0 14px 30px rgba(20, 38, 74, 0.14);
   transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.software-video::before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-top: 56.25%;
 }
 
 .software-video iframe,
